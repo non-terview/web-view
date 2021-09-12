@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // components
-import Header from '../src/components/Header/Header';
+import Header from '../src/components/Template/Header/Header';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
