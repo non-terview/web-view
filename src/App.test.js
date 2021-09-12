@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import renderer from 'react-test-renderer';
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('App changes the class when hovered', () => {
+        const component = renderer.create(
+            <App></App>,
+        );
+
+        let app = component.toJSON();
+
+        expect(app).toMatchSnapshot();
+    }
+)
