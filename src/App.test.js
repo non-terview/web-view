@@ -4,7 +4,7 @@ import App from "./App";
 
 test('App changes the class when hovered', () => {
         const component = renderer.create(
-            <App></App>,
+            <App/>,
         );
 
         let app = component.toJSON();

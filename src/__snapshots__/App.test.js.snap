@@ -10,6 +10,23 @@ exports[`App changes the class when hovered 1`] = `
     <div>
       Header
     </div>
+    <input
+      onChange={[Function]}
+      placeholder="이메일"
+      type="text"
+      value=""
+    />
+    <h1>
+      
+    </h1>
+    <input
+      onChange={[Function]}
+      placeholder="비밀번호"
+      type="password"
+    />
+    <h1>
+      
+    </h1>
   </div>
 </div>
 `;
