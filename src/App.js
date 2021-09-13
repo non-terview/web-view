@@ -2,11 +2,11 @@
 import styled from 'styled-components';
 
 // components
-import Header from '../src/components/Header/Header';
-import SignupInput from '../src/components/SignupForm/SignupInput';
+import Header from '../src/components/Template/Header/Header';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const Container = styled.div`
   width: 100%;
@@ -29,7 +29,8 @@ function App() {
       <GlobalStyle />
       <Header />
       <Content>
-        <SignupInput />
+        <Header />
+          <LoginForm/>
       </Content>
     </Container>
   );
