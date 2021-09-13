@@ -6,7 +6,7 @@ import Header from '../src/components/Template/Header/Header';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
-import LoginInput from "./components/LoginForm/LoginInput/LoginInput";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const Container = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ function App() {
       <GlobalStyle />
       <Content>
         <Header />
-          <LoginInput/>
+          <LoginForm/>
       </Content>
     </Container>
   );

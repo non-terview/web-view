@@ -7,6 +7,7 @@ test('App changes the class when hovered', () => {
             <App/>,
         );
 
+
         let app = component.toJSON();
 
         expect(app).toMatchSnapshot();

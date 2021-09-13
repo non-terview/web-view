@@ -2,6 +2,34 @@
 
 exports[`LoginForm changes the class when hovered 1`] = `
 <div>
-  LoginForm
+  <div>
+    <div>
+      <input
+        onChange={[Function]}
+        placeholder="이메일"
+        type="text"
+        value=""
+      />
+      <h1>
+        
+      </h1>
+    </div>
+    <div>
+      <input
+        onChange={[Function]}
+        placeholder="비밀번호"
+        type="password"
+        value=""
+      />
+      <h1>
+        
+      </h1>
+    </div>
+  </div>
+  <input
+    onClick={[Function]}
+    type="button"
+    value="전환"
+  />
 </div>
 `;

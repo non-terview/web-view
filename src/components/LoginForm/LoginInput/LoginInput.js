@@ -1,42 +1,33 @@
 import React from 'react';
-import {useState} from "react";
 
-function emailValidate(setEmail, email, event) {
-    setEmail(event.target.value);
+function valueSetter(setter, event) {
+    setter(event.target.value);
 }
 
-function passwordValidate(setEmail, email, event) {
-    setEmail(event.target.value);
-}
 
-function LoginForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [lang] = useState("ko");
+function LoginForm(props) {
 
-    const langString =
-        {
-            ko: {
-                email: "이메일", password: "비밀번호"
-            },
-            en: {
-                email: "email", password: "password"
-            }
-        };
-
+    const langString = props.langString;
+    const lang = props.lang;
+    const loginMap = props.loginMap
+        .map((val) =>
+            <div key={"div_"+val["id"]}>
+                <input key={"input_" + val["id"]} type={val["type"]}
+                       placeholder={langString[lang][val["placeholder"]]}
+                       onChange={
+                           event =>
+                               valueSetter(val["setter"], event)
+                       }
+                       value={val["value"]}>
+                </input>
+                <h1 key={"h1_" + val["id"]}>{val["value"]}</h1>
+            </div>
+        );
 
     return (
-        <>
-            <input type="text" placeholder={langString[lang].email} onChange={(event) =>
-                emailValidate(setEmail, email, event)} value={email}>
-            </input>
-            <h1>{email}</h1>
-            <input type="password" placeholder={langString[lang].password} onChange={(event =>
-                passwordValidate(setPassword, email, event))}>
-            </input>
-            <h1>{password}</h1>
-
-        </>
+        <div>
+            {loginMap}
+        </div>
     );
 }
 
