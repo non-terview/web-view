@@ -1,9 +1,12 @@
 // modules
+import { Component } from 'react';
 import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
+import Boardlist from './components/Boardlist/Boardlist.js';
 import Footer from '../src/components/Footer/Footer';
+
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
@@ -30,6 +33,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Content>
+          <Boardlist />
           <LoginForm/>
       </Content>
       <Footer />
