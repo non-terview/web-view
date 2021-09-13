@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Header/Header';
+import SignupInput from '../src/components/SignupForm/SignupInput';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
@@ -26,8 +27,9 @@ function App() {
   return (
     <Container>
       <GlobalStyle />
+      <Header />
       <Content>
-        <Header />
+        <SignupInput />
       </Content>
     </Container>
   );
