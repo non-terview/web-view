@@ -28,8 +28,8 @@ function App() {
   return (
     <Container>
       <GlobalStyle />
+      <Header />
       <Content>
-        <Header />
           <LoginForm/>
       </Content>
       <Footer />
