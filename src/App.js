@@ -1,8 +1,10 @@
 // modules
+import { Component } from 'react';
 import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
+import Boardlist from './components/Boardlist/Boardlist.js';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
@@ -22,15 +24,18 @@ const Content = styled.div`
   /* padding: 20px; */
 `;
 
-function App() {
-  return (
-    <Container>
-      <GlobalStyle />
-      <Content>
-        <Header />
-      </Content>
-    </Container>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Container>
+        <GlobalStyle />
+        <Content>
+          <Header />
+          <Boardlist />
+        </Content>
+      </Container>
+    );
+  }
 }
 
 export default App;
