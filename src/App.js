@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-
 import Footer from '../src/components/Footer/Footer';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const Container = styled.div`
   width: 100%;
@@ -30,6 +30,7 @@ function App() {
       <GlobalStyle />
       <Content>
         <Header />
+          <LoginForm/>
       </Content>
       <Footer />
     </Container>

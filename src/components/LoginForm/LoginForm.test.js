@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
 import LoginForm from './LoginForm';
+import renderer from "react-test-renderer";
+import React from "react";
 
-test('renders LoginForm', () => {
-    render(<LoginForm />);
-    const linkElement = screen.getByText(/LoginForm/i);
-    expect(linkElement).toBeInTheDocument();
-});
+
+
+test('LoginForm changes the class when hovered', () => {
+        const component = renderer.create(
+            <LoginForm/>,
+        );
+
+        let form = component.toJSON();
+
+        expect(form).toMatchSnapshot();
+    }
+)

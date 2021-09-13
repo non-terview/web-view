@@ -1,31 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App changes the class when hovered 1`] = `
-<div
-  className="sc-bdfBQB bHKzxl"
->
-  <div
-    className="sc-gsTEea clljUe"
-  >
-    <div>
-      Header
-    </div>
+exports[`LoginInput changes the class when hovered 1`] = `
+<div>
+  <div>
     <input
       onChange={[Function]}
       placeholder="이메일"
       type="text"
-      value=""
+      value="A"
     />
     <h1>
-      
+      A
     </h1>
+  </div>
+  <div>
     <input
       onChange={[Function]}
       placeholder="비밀번호"
       type="password"
+      value="A"
     />
     <h1>
-      
+      A
+    </h1>
+  </div>
+  <div>
+    <input
+      onChange={[Function]}
+      placeholder="회사"
+      type="text"
+      value="A"
+    />
+    <h1>
+      A
     </h1>
   </div>
 </div>
