@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // components
-import Header from '../src/components/Template/Header/Header';
+import Header from './components/Template/Header/Header';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
@@ -26,9 +26,8 @@ function App() {
   return (
     <Container>
       <GlobalStyle />
-      <Content>
-        <Header />
-      </Content>
+      <Header />
+      <Content></Content>
     </Container>
   );
 }
