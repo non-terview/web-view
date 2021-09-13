@@ -30,7 +30,6 @@ function App() {
       <GlobalStyle />
       <Header />
       <Content>
-        <Header />
           <LoginForm/>
       </Content>
       <Footer />
