@@ -4,13 +4,13 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-import Boardlist from './components/Boardlist/Boardlist.js';
+import Boardlist from '../src/components/Boardlist/Boardlist';
 import Footer from '../src/components/Footer/Footer';
-
+import BoardInfo from '../src/components/BoardInfo/BoardInfo';
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
-import LoginForm from "./components/LoginForm/LoginForm";
+import LoginForm from './components/LoginForm/LoginForm';
 
 const Container = styled.div`
   width: 100%;
@@ -33,8 +33,9 @@ function App() {
       <GlobalStyle />
       <Header />
       <Content>
-          <Boardlist />
-          <LoginForm/>
+        <BoardInfo />
+        <Boardlist />
+        <LoginForm />
       </Content>
       <Footer />
     </Container>
