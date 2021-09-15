@@ -78,7 +78,7 @@ export default function LoginForm() {
             />
             <input type="button" onClick={() => {
                 setIsUser(!isUser);
-            }} value={isUser?"회사 로그인으로 전환":"개인 사용자 로그인으로 전환"}/>
+            }} value={isUser ? "회사 로그인으로 전환" : "개인 사용자 로그인으로 전환"}/>
         </div>
     );
 }

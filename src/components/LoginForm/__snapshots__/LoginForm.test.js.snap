@@ -29,7 +29,7 @@ exports[`LoginForm changes the class when hovered 1`] = `
   <input
     onClick={[Function]}
     type="button"
-    value="전환"
+    value="회사 로그인으로 전환"
   />
 </div>
 `;
