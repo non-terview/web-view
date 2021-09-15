@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-import Boardlist from './components/Boardlist/Boardlist.js';
+import BoardList from './components/Boardlist/BoardList.js';
 import Footer from '../src/components/Footer/Footer';
 
 
@@ -27,17 +27,17 @@ const Content = styled.div`
 `;
 
 function App() {
-  return (
-    <Container>
-      <GlobalStyle />
-      <Header />
-      <Content>
-          <Boardlist />
-          <LoginForm/>
-      </Content>
-      <Footer />
-    </Container>
-  );
+    return (
+        <Container>
+            <GlobalStyle/>
+            <Header/>
+            <Content>
+                <BoardList/>
+                <LoginForm/>
+            </Content>
+            <Footer/>
+        </Container>
+    );
 }
 
 export default App;

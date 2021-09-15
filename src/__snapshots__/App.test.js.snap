@@ -2,7 +2,7 @@
 
 exports[`App changes the class when hovered 1`] = `
 <div
-  className="sc-hKgJUU hhqCpm"
+  className="sc-eCstlR iJGrrf"
 >
   <div
     className="sc-bdfBQB drNOsf"
@@ -15,7 +15,7 @@ exports[`App changes the class when hovered 1`] = `
     />
   </div>
   <div
-    className="sc-eCstlR grqGZw"
+    className="sc-jSgvzq PHgkg"
   >
     <div>
       <table
@@ -88,7 +88,7 @@ exports[`App changes the class when hovered 1`] = `
     </div>
   </div>
   <div
-    className="sc-jSgvzq SdivR"
+    className="sc-hKgJUU dFTgBg"
   >
     ⓒ ON-TERVIEW Corp.
   </div>
