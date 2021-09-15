@@ -1,9 +1,35 @@
 import React, { useState } from 'react';
-
-import useInput from '../../hooks/useInput';
+import styled from 'styled-components';
 
 // components
 import SignupInput from './SignupInput';
+
+// hooks
+import useInput from '../../hooks/useInput';
+
+import Colors from '../../styles/Colors';
+
+const FormWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const ToggleButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  text-transform: uppercase;
+  background-color: ${Colors.primaryColor};
+  color: white;
+  width: 180px;
+  padding: 10px 40px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+`;
 
 const initialValue = { email: '', password: '', confirmPassword: '', name: '', company: '' };
 
@@ -96,17 +122,17 @@ const Signup = (props) => {
   }
 
   return (
-    <div>
+    <FormWrap>
       <SignupInput mapData={SignupInputView()} />
-      <button
+      <ToggleButton
         onClick={() => {
           setIsUser(!isUser);
           inputReset();
         }}
       >
-        {isUser ? '회사 가입으로 전환' : '일반 유저 가입으로 전환'}
-      </button>
-    </div>
+        {isUser ? '회사 가입' : '일반 가입'}
+      </ToggleButton>
+    </FormWrap>
   );
 };
 
