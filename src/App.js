@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-import BoardList from './components/Boardlist/BoardList.js';
+import BoardList from './components/BoardList/BoardList.js';
 import Footer from '../src/components/Footer/Footer';
 
 
