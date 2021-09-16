@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-import BoardList from './components/BoardList/BoardList.js';
 import Footer from '../src/components/Footer/Footer';
+import SignupForm from './components/SignupForm/SignupForm';
 
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
-import LoginForm from "./components/LoginForm/LoginForm";
+import LoginForm from './components/LoginForm/LoginForm';
 
 const Container = styled.div`
   width: 100%;
@@ -22,20 +22,22 @@ const Container = styled.div`
 const Content = styled.div`
   width: 100%;
   height: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
   /* padding: 20px; */
 `;
 
 function App() {
     return (
         <Container>
-            <GlobalStyle/>
-            <Header/>
+            <GlobalStyle />
+            <Header />
             <Content>
-                <BoardList/>
-                <LoginForm/>
+                <LoginForm />
+                {/* <SignupInput /> */}
+                <SignupForm />
+                {/* <SignupForm /> */}
             </Content>
-            <Footer/>
+            <Footer />
         </Container>
     );
 }
