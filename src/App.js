@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
-import BoardList from './components/BoardList/BoardList.js';
 import Footer from '../src/components/Footer/Footer';
 import SignupForm from './components/SignupForm/SignupForm';
 
@@ -30,13 +29,15 @@ const Content = styled.div`
 function App() {
     return (
         <Container>
-            <GlobalStyle/>
-            <Header/>
+            <GlobalStyle />
+            <Header />
             <Content>
-                <BoardList/>
-                <LoginForm/>
+                <LoginForm />
+                {/* <SignupInput /> */}
+                <SignupForm />
+                {/* <SignupForm /> */}
             </Content>
-            <Footer/>
+            <Footer />
         </Container>
     );
 }
