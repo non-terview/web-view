@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 // components
 import Header from '../src/components/Template/Header/Header';
+import BoardList from './components/BoardList/BoardList.js';
 import Footer from '../src/components/Footer/Footer';
 import SignupForm from './components/SignupForm/SignupForm';
+
 
 // styles
 import GlobalStyle from './styles/GlobalStyle';
@@ -26,19 +28,17 @@ const Content = styled.div`
 `;
 
 function App() {
-  return (
-    <Container>
-      <GlobalStyle />
-      <Header />
-      <Content>
-        <LoginForm />
-        {/* <SignupInput /> */}
-        <SignupForm />
-        {/* <SignupForm /> */}
-      </Content>
-      <Footer />
-    </Container>
-  );
+    return (
+        <Container>
+            <GlobalStyle/>
+            <Header/>
+            <Content>
+                <BoardList/>
+                <LoginForm/>
+            </Content>
+            <Footer/>
+        </Container>
+    );
 }
 
 export default App;

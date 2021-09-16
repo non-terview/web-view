@@ -11,7 +11,7 @@ function LoginForm(props) {
     const lang = props.lang;
     const loginMap = props.loginMap
         .map((val) =>
-            <div key={"div_"+val["id"]}>
+            <div key={"div_" + val["id"]}>
                 <input key={"input_" + val["id"]} type={val["type"]}
                        placeholder={langString[lang][val["placeholder"]]}
                        onChange={

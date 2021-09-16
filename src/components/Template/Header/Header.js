@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // modules
 import styled from 'styled-components';
 
@@ -27,10 +28,10 @@ const HeaderMenuWrap = styled.div`
 `;
 
 export default function Header() {
-  return (
-    <HeaderWrap>
-      <HeaderLogo />
-      <HeaderMenuWrap>{/* 로그인, 로그아웃 등의 버튼 위치 */}</HeaderMenuWrap>
-    </HeaderWrap>
-  );
+    return (
+        <HeaderWrap>
+            <HeaderLogo/>
+            <HeaderMenuWrap>{/* 로그인, 로그아웃 등의 버튼 위치 */}</HeaderMenuWrap>
+        </HeaderWrap>
+    );
 }
