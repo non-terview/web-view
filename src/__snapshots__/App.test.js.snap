@@ -2,105 +2,20 @@
 
 exports[`App changes the class when hovered 1`] = `
 <div
-  className="sc-iBPTik iBSrwZ"
+  className="sc-pGacB kJAcfD"
 >
   <div
-    className="sc-bdfBQB drNOsf"
+    className="sc-gKseQn gEyeQr"
   >
     <div
-      className="sc-gsTEea mCwxa"
+      className="sc-iBPTik qrlFK"
     />
     <div
-      className="sc-dlfnuX gBFZNp"
+      className="sc-fubCzh boBcxA"
     />
   </div>
   <div
-    className="sc-fubCzh kHYqov"
-  >
-    <div>
-      <div>
-        <div>
-          <input
-            onChange={[Function]}
-            placeholder="이메일"
-            type="text"
-            value=""
-          />
-          <h1>
-            
-          </h1>
-        </div>
-        <div>
-          <input
-            onChange={[Function]}
-            placeholder="비밀번호"
-            type="password"
-            value=""
-          />
-          <h1>
-            
-          </h1>
-        </div>
-      </div>
-      <input
-        onClick={[Function]}
-        type="button"
-        value="회사 로그인으로 전환"
-      />
-    </div>
-    <div
-      className="sc-jSgvzq gpInGo"
-    >
-      <div>
-        <div>
-          <input
-            className="sc-eCstlR eDCiUy"
-            name="email"
-            onChange={[Function]}
-            placeholder="email"
-            value=""
-          />
-        </div>
-        <div>
-          <input
-            className="sc-eCstlR eDCiUy"
-            name="password"
-            onChange={[Function]}
-            placeholder="password"
-            value=""
-          />
-        </div>
-        <div>
-          <input
-            className="sc-eCstlR eDCiUy"
-            name="confirmPassword"
-            onChange={[Function]}
-            placeholder="confirmPassword"
-            value=""
-          />
-        </div>
-        <div>
-          <input
-            className="sc-eCstlR eDCiUy"
-            name="name"
-            onChange={[Function]}
-            placeholder="name"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        className="sc-gKseQn havmCN"
-        onClick={[Function]}
-      >
-        회사 가입
-      </div>
-    </div>
-  </div>
-  <div
-    className="sc-hKgJUU dFTgBg"
-  >
-    ⓒ ON-TERVIEW Corp.
-  </div>
+    className="sc-jrAFXE bhDQnR"
+  />
 </div>
 `;

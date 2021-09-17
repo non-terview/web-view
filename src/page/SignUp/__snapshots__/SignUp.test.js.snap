@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp changes the class when hovered 1`] = `
+<div
+  className="sc-gsTEea evOHZW"
+>
+  <div>
+    <div>
+      <input
+        className="sc-bdfBQB emdnPA"
+        name="email"
+        onChange={[Function]}
+        placeholder="email"
+        value=""
+      />
+    </div>
+    <div>
+      <input
+        className="sc-bdfBQB emdnPA"
+        name="password"
+        onChange={[Function]}
+        placeholder="password"
+        value=""
+      />
+    </div>
+    <div>
+      <input
+        className="sc-bdfBQB emdnPA"
+        name="confirmPassword"
+        onChange={[Function]}
+        placeholder="confirmPassword"
+        value=""
+      />
+    </div>
+    <div>
+      <input
+        className="sc-bdfBQB emdnPA"
+        name="name"
+        onChange={[Function]}
+        placeholder="name"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="sc-dlfnuX logZOV"
+    onClick={[Function]}
+  >
+    회사 가입
+  </div>
+</div>
+`;
