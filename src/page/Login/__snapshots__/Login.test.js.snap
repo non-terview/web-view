@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login changes the class when hovered 1`] = `
+<div
+  className="sc-gsTEea evOHZW"
+>
+  <div>
+    <div>
+      <input
+        className="sc-bdfBQB erSyrG"
+        onChange={[Function]}
+        placeholder="email"
+        type="text"
+        value=""
+      />
+      <h1>
+        
+      </h1>
+    </div>
+    <div>
+      <input
+        className="sc-bdfBQB erSyrG"
+        onChange={[Function]}
+        placeholder="password"
+        type="password"
+        value=""
+      />
+      <h1>
+        
+      </h1>
+    </div>
+  </div>
+  <input
+    className="sc-dlfnuX logZOV"
+    onClick={[Function]}
+    type="button"
+    value="회사 로그인으로 전환"
+  />
+</div>
+`;
