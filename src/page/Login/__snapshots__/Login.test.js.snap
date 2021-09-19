@@ -1,12 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm changes the class when hovered 1`] = `
-<div>
+exports[`Login changes the class when hovered 1`] = `
+<div
+  className="sc-gsTEea evOHZW"
+>
   <div>
     <div>
       <input
+        className="sc-bdfBQB erSyrG"
         onChange={[Function]}
-        placeholder="이메일"
+        placeholder="email"
         type="text"
         value=""
       />
@@ -16,8 +19,9 @@ exports[`LoginForm changes the class when hovered 1`] = `
     </div>
     <div>
       <input
+        className="sc-bdfBQB erSyrG"
         onChange={[Function]}
-        placeholder="비밀번호"
+        placeholder="password"
         type="password"
         value=""
       />
@@ -27,6 +31,7 @@ exports[`LoginForm changes the class when hovered 1`] = `
     </div>
   </div>
   <input
+    className="sc-dlfnuX logZOV"
     onClick={[Function]}
     type="button"
     value="회사 로그인으로 전환"

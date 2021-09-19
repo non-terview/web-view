@@ -2,31 +2,20 @@
 
 exports[`App changes the class when hovered 1`] = `
 <div
-  className="sc-bdfBQB bHKzxl"
+  className="sc-pGacB kJAcfD"
 >
   <div
-    className="sc-gsTEea clljUe"
+    className="sc-gKseQn gEyeQr"
   >
-    <div>
-      Header
-    </div>
-    <input
-      onChange={[Function]}
-      placeholder="이메일"
-      type="text"
-      value=""
+    <div
+      className="sc-iBPTik qrlFK"
     />
-    <h1>
-      
-    </h1>
-    <input
-      onChange={[Function]}
-      placeholder="비밀번호"
-      type="password"
+    <div
+      className="sc-fubCzh boBcxA"
     />
-    <h1>
-      
-    </h1>
   </div>
+  <div
+    className="sc-jrAFXE bhDQnR"
+  />
 </div>
 `;

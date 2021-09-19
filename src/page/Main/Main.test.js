@@ -1,11 +1,11 @@
-import LoginForm from './LoginForm';
+import Main from './Main';
 import renderer from "react-test-renderer";
 import React from "react";
 
 
-test('LoginForm changes the class when hovered', () => {
+test('Main changes the class when hovered', () => {
         const component = renderer.create(
-            <LoginForm/>,
+            <Main/>,
         );
 
         let form = component.toJSON();

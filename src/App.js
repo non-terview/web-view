@@ -1,16 +1,15 @@
-// modules
-import { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 
-// components
-import Header from '../src/components/Template/Header/Header';
-import Boardlist from '../src/components/Boardlist/Boardlist';
-import Footer from '../src/components/Footer/Footer';
-import BoardInfo from '../src/components/BoardInfo/BoardInfo';
+import Main from './page/Main/Main';
+import Login from './page/Login/Login';
+import SignUp from './page/SignUp/SignUp';
 
-// styles
-import GlobalStyle from './styles/GlobalStyle';
-import LoginForm from './components/LoginForm/LoginForm';
+import {Switch, Route} from 'react-router-dom';
+import styled from "styled-components";
+import GlobalStyle from "./styles/GlobalStyle";
+import Header from "./components/Template/Header/Header";
+
+import {BrowserRouter} from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -23,23 +22,28 @@ const Container = styled.div`
 const Content = styled.div`
   width: 100%;
   height: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
   /* padding: 20px; */
 `;
 
 function App() {
-  return (
-    <Container>
-      <GlobalStyle />
-      <Header />
-      <Content>
-        <BoardInfo />
-        <Boardlist />
-        <LoginForm />
-      </Content>
-      <Footer />
-    </Container>
-  );
+    return (
+        <>
+            <BrowserRouter>
+                <Container>
+                    <GlobalStyle/>
+                    <Header/>
+                    <Content>
+                        <Switch>
+                            <Route path="/" exact component={Main}/>
+                            <Route path="/login" component={Login}/>
+                            <Route path="/sign-up" component={SignUp}/>
+                        </Switch>
+                    </Content>
+                </Container>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
