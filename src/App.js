@@ -3,7 +3,9 @@ import React from 'react';
 import Main from './page/Main/Main';
 import Login from './page/Login/Login';
 import SignUp from './page/SignUp/SignUp';
-import ErrorPage400 from './page/Errors/ErrorPage400';
+import ErrorPage400 from './page/Error_page/ErrorPage400';
+import ErrorPage404 from './page/Error_page/ErrorPage404';
+import ErrorPage500 from './page/Error_page/ErrorPage500';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -41,6 +43,8 @@ function App() {
               <Route path='/login' component={Login} />
               <Route path='/sign-up' component={SignUp} />
               <Route path='/errors/400' component={ErrorPage400} />
+              <Route path='/errors/404' component={ErrorPage404} />
+              <Route path='/errors/500' component={ErrorPage500} />
             </Switch>
           </Content>
           <Footer />
