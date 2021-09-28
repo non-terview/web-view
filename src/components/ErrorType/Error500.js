@@ -2,24 +2,30 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
-const ErrorPage500 = styled.div`
+const ErrorWrap = styled.div`
   height: 650px;
-  font-size: 60px;
+  font-size: 40px;
   font-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const Ptag = styled.div`
+  font-size: 20px;
+`;
+
 class Error500 extends Component {
   render() {
     return (
       <div>
-        <ErrorPage500>
-          Error (500)
-          <br />
-          내부 서버 오류입니다!
-        </ErrorPage500>
+        <ErrorWrap>
+          <div>
+            <h2>Error (500)</h2>
+            <Ptag>죄송합니다.</Ptag>
+            <Ptag>내부 서버 오류입니다!</Ptag>
+          </div>
+        </ErrorWrap>
       </div>
     );
   }

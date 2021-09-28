@@ -2,24 +2,30 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components';
 
-const ErrorPage400 = styled.div`
+const ErrorWrap = styled.div`
   height: 650px;
-  font-size: 60px;
+  font-size: 40px;
   font-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const Ptag = styled.div`
+  font-size: 20px;
+`;
+
 class Error400 extends Component {
   render() {
     return (
       <div>
-        <ErrorPage400>
-          Error (400)
-          <br />
-          잘못된 형식의 요청입니다!
-        </ErrorPage400>
+        <ErrorWrap>
+          <div>
+            <h2>Error (400)</h2>
+            <Ptag>죄송합니다.</Ptag>
+            <Ptag>잘못된 형식의 요청입니다!</Ptag>
+          </div>
+        </ErrorWrap>
       </div>
     );
   }
