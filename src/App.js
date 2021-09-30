@@ -3,6 +3,7 @@ import React from 'react';
 import Main from './page/Main/Main';
 import Login from './page/Login/Login';
 import SignUp from './page/SignUp/SignUp';
+import Board from './page/Board/Board';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -38,6 +39,7 @@ function App() {
               <Route path='/' exact component={Main} />
               <Route path='/login' component={Login} />
               <Route path='/sign-up' component={SignUp} />
+              <Route path='/board' component={Board} />
             </Switch>
           </Content>
         </Container>

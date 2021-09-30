@@ -10,7 +10,6 @@ const BoardInfoWrap = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 //제목아래 NAV
 const BoardInfoTopNav = styled.div`
   width: 100%;
