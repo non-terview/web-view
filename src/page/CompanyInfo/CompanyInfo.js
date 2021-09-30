@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CompanyInfoModify from '../../components/CompanyInfoModify/CompanyInfoModify';
 
-class CompanyInfo extends Component {
-  render() {
-    return <div></div>;
-  }
+function CompanyInfo() {
+  return <CompanyInfoModify />;
 }
 
 export default CompanyInfo;
