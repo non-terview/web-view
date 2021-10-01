@@ -52,40 +52,44 @@ class BoardList extends Component {
     return (
       <div>
         <table border='1'>
-          <tr>
-            <th width='60px'>
-              <BoardNumber>글 번호</BoardNumber>
-            </th>
-            <th width='150px'>
-              <BoardRegion>지역</BoardRegion>
-            </th>
-            <th width='400px'>
-              <BoardTitle>기업명/제목</BoardTitle>
-            </th>
-            <th width='100px'>
-              <BoardWriteData>작성날짜</BoardWriteData>
-            </th>
-            <th width='100px'>
-              <BoardClosingDate>마감일</BoardClosingDate>
-            </th>
-          </tr>
-          <tr>
-            <td width='60px'>
-              <BoardNumber>1</BoardNumber>
-            </td>
-            <td width='150px'>
-              <BoardRegion>지역</BoardRegion>
-            </td>
-            <td width='400px'>
-              <BoardTitle>기업명/제목</BoardTitle>
-            </td>
-            <td width='100px'>
-              <BoardWriteData>작성날짜</BoardWriteData>
-            </td>
-            <td width='100px'>
-              <BoardClosingDate>마감일</BoardClosingDate>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th width='60px'>
+                <BoardNumber>글 번호</BoardNumber>
+              </th>
+              <th width='150px'>
+                <BoardRegion>지역</BoardRegion>
+              </th>
+              <th width='400px'>
+                <BoardTitle>기업명/제목</BoardTitle>
+              </th>
+              <th width='100px'>
+                <BoardWriteData>작성날짜</BoardWriteData>
+              </th>
+              <th width='100px'>
+                <BoardClosingDate>마감일</BoardClosingDate>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td width='60px'>
+                <BoardNumber>1</BoardNumber>
+              </td>
+              <td width='150px'>
+                <BoardRegion>지역</BoardRegion>
+              </td>
+              <td width='400px'>
+                <BoardTitle>기업명/제목</BoardTitle>
+              </td>
+              <td width='100px'>
+                <BoardWriteData>작성날짜</BoardWriteData>
+              </td>
+              <td width='100px'>
+                <BoardClosingDate>마감일</BoardClosingDate>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );

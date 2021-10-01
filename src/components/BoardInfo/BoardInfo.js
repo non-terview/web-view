@@ -55,34 +55,38 @@ class BoardInfo extends Component {
     return (
       <div>
         <table border='1'>
-          <tr>
-            <th colSpan='3' width='700px'>
-              <BoardInfoWrap>제목이 들어갈 자리입니다.</BoardInfoWrap>
-            </th>
-          </tr>
-          <tr>
-            <td colSpan='3'>
-              <BoardInfoTopNav>{'BoardInfo 제목아래 Nav부분'}</BoardInfoTopNav>
-            </td>
-          </tr>
-          <tr>
-            <th colspan='2' width='370px' height='50px' bgcolor='white'>
-              모집조건 및 근무조건
-            </th>
-            <td rowSpan='2'>
-              <BoardInfoMiddleNav>{'두번째 NAV 버튼(지원하기 버튼 등)'}</BoardInfoMiddleNav>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <BoardInfoRecruit>{'모집조건 및 근무조건 내용'}</BoardInfoRecruit>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan='3'>
-              <BoardInfoContent>내용이 들어가는 부분입니다.</BoardInfoContent>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th colSpan='3' width='700px'>
+                <BoardInfoWrap>제목이 들어갈 자리입니다.</BoardInfoWrap>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colSpan='3'>
+                <BoardInfoTopNav>{'BoardInfo 제목아래 Nav부분'}</BoardInfoTopNav>
+              </td>
+            </tr>
+            <tr>
+              <th colSpan='2' width='370px' height='50px' bgcolor='white'>
+                모집조건 및 근무조건
+              </th>
+              <td rowSpan='2'>
+                <BoardInfoMiddleNav>{'두번째 NAV 버튼(지원하기 버튼 등)'}</BoardInfoMiddleNav>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <BoardInfoRecruit>{'모집조건 및 근무조건 내용'}</BoardInfoRecruit>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan='3'>
+                <BoardInfoContent>내용이 들어가는 부분입니다.</BoardInfoContent>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );
