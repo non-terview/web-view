@@ -26,10 +26,10 @@ export default function BoardSearch() {
   };
 
   //체크박스
-  const [checkValueA, setCheckValueA] = useState([]);
+  const [checkValue, setCheckValue] = useState([]);
 
   useEffect(() => {
-    const checkValueA = [
+    const checkValue = [
       { id: 'A1', name: 'A1', value: 'A1' },
       { id: 'A2', name: 'A2', value: 'A2' },
       { id: 'A3', name: 'A3', value: 'A3' },
@@ -39,8 +39,8 @@ export default function BoardSearch() {
       { id: 'B3', name: 'B3', value: 'B3' },
       { id: 'B4', name: 'B4', value: 'B4' }
     ];
-    setCheckValueA(
-      checkValueA.map((v) => {
+    setCheckValue(
+      checkValue.map((v) => {
         return {
           select: false,
           id: v.id,
@@ -51,9 +51,12 @@ export default function BoardSearch() {
     );
   }, []);
 
-  //input 초기화
-  const resetButton = () => {
+  //form reset
+  //혼자 했던 방법은 select:false 하면 체크박스 한개빼고 다 사라지면서 false로 바꼈는데 spread연산자로 해결
+  const formReset = (e) => {
     setCompanyName('');
+    const newCheckValue = { ...checkValue, select: false };
+    console.log(newCheckValue);
   };
 
   return (
@@ -66,23 +69,23 @@ export default function BoardSearch() {
               기업명 : <input type='text' id='companyname' name='companyname' value={companyname} placeholder='기업명을 입력해주세요.' onChange={companySearch}></input>
               <div>
                 <br />
-                {checkValueA.map((v) => (
+                {checkValue.map((v, i) => (
                   <Fragment key={v.id}>
                     {v.value}
                     <input
                       type='checkbox'
                       checked={v.select}
                       onChange={(e) => {
-                        const checkA = e.target.checked;
-                        setCheckValueA(
-                          checkValueA.map((dataA) => {
-                            if (v.id === dataA.id) {
+                        const check = e.target.checked;
+                        setCheckValue(
+                          checkValue.map((data) => {
+                            if (v.id === data.id) {
                               //체크박스 선택하게 되면 checkA의 값이 true로 바뀌면서 data.select(false)의 값이 true로 바뀐다.
-                              dataA.select = checkA;
-                              console.log(dataA.id);
-                              console.log(dataA.select);
+                              data.select = check;
+                              console.log(data.id);
+                              console.log(data.select);
                             }
-                            return dataA;
+                            return data;
                           })
                         );
                       }}
@@ -93,7 +96,9 @@ export default function BoardSearch() {
               <ButtonPosition>
                 <button type='submit'>검색</button>
                 &nbsp; &nbsp;
-                <button onClick={resetButton}>초기화</button>
+                <button type='reset' onClick={formReset}>
+                  초기화
+                </button>
               </ButtonPosition>
             </InputPosition>
           </fieldset>
