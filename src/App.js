@@ -7,6 +7,7 @@ import ScoreCard from './page/ScoreCard/ScoreCard';
 import ErrorPage400 from './page/Error_page/ErrorPage400';
 import ErrorPage404 from './page/Error_page/ErrorPage404';
 import ErrorPage500 from './page/Error_page/ErrorPage500';
+import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -47,6 +48,7 @@ function App() {
               <Route path='/errors/404' component={ErrorPage404} />
               <Route path='/errors/500' component={ErrorPage500} />
               <Route path='/boards/board/reference-tables/table_num' component={ScoreCard} />
+              <Route path='/boards/board/schedule' component={Calendar} />
             </Switch>
           </Content>
           <Footer />
