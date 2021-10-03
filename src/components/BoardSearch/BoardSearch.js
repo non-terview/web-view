@@ -51,12 +51,15 @@ export default function BoardSearch() {
     );
   }, []);
 
-  //form reset
-  //혼자 했던 방법은 select:false 하면 체크박스 한개빼고 다 사라지면서 false로 바꼈는데 spread연산자로 해결
+  //오브젝트는 map() 함수를 가지고 있지 않아서 map()을 쓰려면 배열로 선언해야한다.
+  //그래서 위에 select:false 값은 객체로 선언 되어있기 때문에 set으로 바꿀수가 없었다. (배열로 만들면 밑에 map값이 제대로 출력되지가 않음)
+  //그래서 for문으로 기존 객체값을 읽어서 false로 바꿔줬다. (사실 이게 맞는지는 모르겠다.)
   const formReset = (e) => {
     setCompanyName('');
-    const newCheckValue = { ...checkValue, select: false };
-    console.log(newCheckValue);
+    for (let i = 0; i < checkValue.length; i++) {
+      checkValue[i].select = false;
+    }
+    console.log(checkValue);
   };
 
   return (
@@ -80,7 +83,9 @@ export default function BoardSearch() {
                         setCheckValue(
                           checkValue.map((data) => {
                             if (v.id === data.id) {
-                              //체크박스 선택하게 되면 checkA의 값이 true로 바뀌면서 data.select(false)의 값이 true로 바뀐다.
+                              //체크박스 선택하게 되면 const check의 값이 true로 바뀌면서 data.select(false)의 값이 true로 바뀐다.
+                              //true에서 false가 될 때도 마찬가지.
+                              //console.log는 값 확인용
                               data.select = check;
                               console.log(data.id);
                               console.log(data.select);
