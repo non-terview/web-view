@@ -28,19 +28,19 @@ const RightBoxWrap = styled.div`
 
 // 후에 리덕스에서 상태값 받아와서 적용하기
 const StateIcon = () => {
-  const [iconState, setIconState] = useState('참여');
-  const stateMap = [
-    {
-      id: 1,
-      state: '참여',
-      color: '#45ff38'
-    },
-    {
-      id: 2,
-      state: '종료',
-      color: '#ff3838'
-    }
-  ];
+  // const [iconState, setIconState] = useState('참여');
+  // const stateMap = [
+  //   {
+  //     id: 1,
+  //     state: '참여',
+  //     color: '#45ff38'
+  //   },
+  //   {
+  //     id: 2,
+  //     state: '종료',
+  //     color: '#ff3838'
+  //   }
+  // ];
   return (
     <StateIconWrap>
       <LeftBox />
