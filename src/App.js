@@ -9,12 +9,14 @@ import ErrorPage404 from './page/Error_page/ErrorPage404';
 import ErrorPage500 from './page/Error_page/ErrorPage500';
 import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 import Board from './page/Board/Board';
+import CompanyInfo from './page/CompanyInfo/CompanyInfo';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/Template/Header/Header';
 import Footer from './components/Footer/Footer';
+import StateIcon from './components/StateIcon/StateIcon';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -40,6 +42,7 @@ function App() {
         <Container>
           <GlobalStyle />
           <Header />
+          <StateIcon />
           <Content>
             <Switch>
               <Route path='/' exact component={Main} />
@@ -51,6 +54,7 @@ function App() {
               <Route path='/boards/board/reference-tables/table_num' component={ScoreCard} />
               <Route path='/boards/board/schedule' component={Calendar} />
               <Route path='/board' component={Board} />
+                <Route path='/company/user/info' component={CompanyInfo} />
             </Switch>
           </Content>
           <Footer />
