@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Component } from 'react';
 import styled from 'styled-components';
 
 const SearchField = styled.div`
