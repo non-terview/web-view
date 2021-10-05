@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/Template/Header/Header';
 import Footer from './components/Footer/Footer';
+import StateIcon from './components/StateIcon/StateIcon';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -39,6 +40,7 @@ function App() {
         <Container>
           <GlobalStyle />
           <Header />
+          <StateIcon />
           <Content>
             <Switch>
               <Route path='/' exact component={Main} />
