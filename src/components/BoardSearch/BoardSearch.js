@@ -55,10 +55,15 @@ export default function BoardSearch() {
   //그래서 for문으로 기존 객체값을 읽어서 false로 바꿔줬다. (사실 이게 맞는지는 모르겠다.)
   const formReset = (e) => {
     setCompanyName('');
-    for (let i = 0; i < checkValue.length; i++) {
+    checkValue.forEach((x, i) => {
       checkValue[i].select = false;
-    }
+    });
     console.log(checkValue);
+  };
+
+  const brNumber = (i) => {
+    if ((i + 1) % 4 === 0) return <br></br>;
+    return <></>;
   };
 
   return (
@@ -69,8 +74,8 @@ export default function BoardSearch() {
             <legend>검색</legend>
             <InputPosition>
               기업명 : <input type='text' id='companyname' name='companyname' value={companyname} placeholder='기업명을 입력해주세요.' onChange={companySearch}></input>
+              <br />
               <div>
-                <br />
                 {checkValue.map((v, i) => (
                   <Fragment key={v.id}>
                     {v.value}
@@ -94,6 +99,7 @@ export default function BoardSearch() {
                         );
                       }}
                     ></input>
+                    {brNumber(i)}
                   </Fragment>
                 ))}
               </div>
