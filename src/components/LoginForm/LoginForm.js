@@ -6,26 +6,26 @@ import Button from "@material-ui/core/Button";
 
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles( theme => ( {
   root: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: theme.spacing(2),
+    padding: theme.spacing( 2 ),
 
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: theme.spacing( 1 ),
       width: '600px',
     },
     '& .MuiButtonBase-root': {
-      margin: theme.spacing(2),
+      margin: theme.spacing( 2 ),
     },
   },
-}));
+} ) );
 
 
-export default function LoginForm( ) {
+export default function LoginForm() {
   // 언어 설정
   const [ lang ] = useState( 'ko' );
   // 이메일, 비밀번호
@@ -38,7 +38,7 @@ export default function LoginForm( ) {
   const classes = useStyles();
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) => {
     e.preventDefault();
 
     console.log( email );
@@ -69,7 +69,7 @@ export default function LoginForm( ) {
       id: 1,
       placeholder: 'email',
       setter: setEmail,
-      type: 'text',
+      type: 'email',
       value: email
     },
     {
@@ -106,18 +106,20 @@ export default function LoginForm( ) {
   };
 
   return (
-    <form className={classes.root} onSubmit={handleSubmit}>
+    <form className={ classes.root } onSubmit={ handleSubmit }>
       <LoginInput lang={ lang } langString={ langString } loginMap={ LoginInputView() }/>
-      <Button
-        variant="outlined"
-        type='button'
-        onClick={ () => {
-          setIsUser( !isUser );
-        } }
-      >{ isUser ? '회사 로그인으로 전환' : '개인 사용자 로그인으로 전환' }</Button>
-      <Button type="submit" variant="contained" color="primary">
-        Signup
-      </Button>
+      <div>
+        <Button
+          variant="outlined"
+          type='button'
+          onClick={ () => {
+            setIsUser( !isUser );
+          } }
+        >{ isUser ? '회사 로그인으로 전환' : '개인 사용자 로그인으로 전환' }</Button>
+        <Button type="submit" variant="outlined" color="primary">
+          로그인 하기
+        </Button>
+      </div>
     </form>
   );
 }
