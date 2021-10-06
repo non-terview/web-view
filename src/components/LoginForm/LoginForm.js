@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-
 import LoginInput from './LoginInput/LoginInput';
-
 import Button from "@material-ui/core/Button";
-
 import { makeStyles } from '@material-ui/core';
+
+
+import { useDispatch } from 'react-redux';
+import { getToken } from "../../redux/User/LoginUserSlice";
+import axios from "axios";
 
 const useStyles = makeStyles( theme => ( {
   root: {
@@ -37,14 +39,21 @@ export default function LoginForm() {
   const [ isUser, setIsUser ] = useState( true );
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+
 
   const handleSubmit = ( e ) => {
     e.preventDefault();
 
-    console.log( email );
-    console.log( password );
-    console.log( company );
-    console.log( isUser );
+    axios.get( "/api/user/token" )
+      .then( ( response ) => {
+        // 성공
+        const data = response.data;
+        console.log( data );
+        dispatch( getToken( data.token.token ) );
+      } ).catch( ( error ) => {
+      console.log( error );
+    } );
   }
 
   const userMap = [
