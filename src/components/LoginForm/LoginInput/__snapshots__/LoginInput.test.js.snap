@@ -3,37 +3,127 @@
 exports[`LoginInput changes the class when hovered 1`] = `
 <div>
   <div>
-    <input
-      onChange={[Function]}
-      placeholder="이메일"
-      type="text"
-      value="A"
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated"
+      htmlFor="input_1"
     />
-    <h1>
-      A
-    </h1>
+    <div
+      className="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled Mui-required Mui-required"
+        data-shrink={true}
+      >
+        이메일
+        <span
+          aria-hidden={true}
+          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+        >
+           
+          *
+        </span>
+      </label>
+      <div
+        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiFilledInput-input"
+          disabled={false}
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={true}
+          type="text"
+          value="A"
+        />
+      </div>
+    </div>
   </div>
   <div>
-    <input
-      onChange={[Function]}
-      placeholder="비밀번호"
-      type="password"
-      value="A"
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated"
+      htmlFor="input_2"
     />
-    <h1>
-      A
-    </h1>
+    <div
+      className="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled Mui-required Mui-required"
+        data-shrink={true}
+      >
+        비밀번호
+        <span
+          aria-hidden={true}
+          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+        >
+           
+          *
+        </span>
+      </label>
+      <div
+        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiFilledInput-input"
+          disabled={false}
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={true}
+          type="password"
+          value="A"
+        />
+      </div>
+    </div>
   </div>
   <div>
-    <input
-      onChange={[Function]}
-      placeholder="회사"
-      type="text"
-      value="A"
+    <label
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated"
+      htmlFor="input_3"
     />
-    <h1>
-      A
-    </h1>
+    <div
+      className="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-filled MuiFormLabel-filled Mui-required Mui-required"
+        data-shrink={true}
+      >
+        회사
+        <span
+          aria-hidden={true}
+          className="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+        >
+           
+          *
+        </span>
+      </label>
+      <div
+        className="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiInputBase-input MuiFilledInput-input"
+          disabled={false}
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          required={true}
+          type="text"
+          value="A"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
