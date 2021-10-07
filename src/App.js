@@ -10,7 +10,8 @@ import ErrorPage500 from './page/Error_page/ErrorPage500';
 import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 import Board from './page/Board/Board';
 import CompanyInfo from './page/CompanyInfo/CompanyInfo';
-import MockTestPage from './page/MockTest/MockTestPage';
+import MockTest from './page/MockTest/MockTest_page';
+import RegisterResume from './page/RegisterResume/RegisterResume_page';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -56,7 +57,8 @@ function App() {
               <Route path='/boards/board/schedule' component={Calendar} />
               <Route path='/board' component={Board} />
               <Route path='/company/user/info' component={CompanyInfo} />
-              <Route path='/mocktest' component={MockTestPage} />
+              <Route path='/mocktest' component={MockTest} />
+              <Route path='/registerresume' component={RegisterResume} />
             </Switch>
           </Content>
           <Footer />

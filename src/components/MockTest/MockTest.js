@@ -2,7 +2,7 @@ import React from 'react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-function MockTest() {
+export default function MockTest() {
   return (
     <div>
       <CKEditor
@@ -16,5 +16,3 @@ function MockTest() {
     </div>
   );
 }
-
-export default MockTest;
