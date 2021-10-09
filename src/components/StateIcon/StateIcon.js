@@ -44,7 +44,7 @@ const StateIcon = () => {
     handleColorSelect();
   };
 
-  // 객체 내에 색상값을 넣어서 설정하고 싶음.
+  // 객체 내에 색상값을 넣어서 설정하고 싶음. 지금 색상값 오류있음
   const handleColorSelect = () => {
     switch (userState) {
       case '참여':
