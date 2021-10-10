@@ -1,15 +1,25 @@
 import Login from './Login';
-import renderer from "react-test-renderer";
 import React from "react";
+import { render } from "@testing-library/react";
+import { useSelector } from 'react-redux';
+
+jest.mock( 'react-redux' );
 
 
-test('Login changes the class when hovered', () => {
-        const component = renderer.create(
-            <Login/>,
-        );
+test( 'Login changes the class when hovered', () => {
+    const tasks = [];
 
-        let form = component.toJSON();
+    useSelector.mockImplementation( ( selector ) => selector( {
+      tasks,
+    } ) );
 
-        expect(form).toMatchSnapshot();
-    }
+    const { getByText } = render(
+      <Login/>,
+    );
+
+    expect( getByText( '이메일' ) ).not.toBeNull();
+    expect( getByText( '비밀번호' ) ).not.toBeNull();
+    expect( getByText( '회사 로그인으로 전환' ) ).not.toBeNull();
+    expect( getByText( '이메일' ) ).toMatchSnapshot();
+  }
 )
