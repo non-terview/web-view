@@ -11,7 +11,7 @@ const ErrorWrap = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Ptag = styled.div`
+const Ptag = styled.p`
   font-size: 20px;
 `;
 function SVGErrorIcon(props) {
