@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const SearchField = styled.div`
+const FormField = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,7 @@ export default function BoardSearch() {
 
   return (
     <div>
-      <SearchField>
+      <FormField>
         <form method='GET'>
           <fieldset style={{ width: '310px' }}>
             <legend>검색</legend>
@@ -113,7 +113,7 @@ export default function BoardSearch() {
             </InputPosition>
           </fieldset>
         </form>
-      </SearchField>
+      </FormField>
     </div>
   );
 }

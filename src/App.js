@@ -57,8 +57,8 @@ function App() {
               <Route path='/boards/board/schedule' component={Calendar} />
               <Route path='/board' component={Board} />
               <Route path='/company/user/info' component={CompanyInfo} />
-              <Route path='/mocktest' component={MockTest} />
-              <Route path='/registerresume' component={RegisterResume} />
+              <Route path='/boards/board/tests/test' component={MockTest} />
+              <Route path='/users/user/resume' component={RegisterResume} />
             </Switch>
           </Content>
           <Footer />
