@@ -48,8 +48,10 @@ const StateIcon = () => {
   // option 선택 버튼은 회사 계정에서만 보이도록 설정해야함.
   const handleSelect = (e) => {
     dispatch(changeState(e.target.value));
+    handleColorSelect();
   };
 
+  // 객체 내에 색상값을 넣어서 설정하고 싶음.
   const handleColorSelect = () => {
     switch (userState) {
       case '참여':

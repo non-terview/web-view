@@ -5,12 +5,14 @@ import logger from 'redux-logger';
 // ex) import testSlice from './Test/testSlice';
 
 import IconStateSlice from './User/IconStateSlice';
+import LoginUserSlice from "./User/LoginUserSlice";
 
 const middleware = [...getDefaultMiddleware(), logger];
 
 export default configureStore({
   reducer: {
-    iconState: IconStateSlice
+    iconState: IconStateSlice,
+    loginUser: LoginUserSlice
   },
   middleware
 });

@@ -2,20 +2,8 @@
 
 exports[`App changes the class when hovered 1`] = `
 <div
-  className="sc-pGacB kJAcfD"
+  class="sc-fKFxtB hunkaP"
 >
-  <div
-    className="sc-gKseQn gEyeQr"
-  >
-    <div
-      className="sc-iBPTik qrlFK"
-    />
-    <div
-      className="sc-fubCzh boBcxA"
-    />
-  </div>
-  <div
-    className="sc-jrAFXE bhDQnR"
-  />
+  ⓒ ON-TERVIEW Corp.
 </div>
 `;

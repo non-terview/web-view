@@ -10,6 +10,7 @@ import ErrorPage500 from './page/Error_page/ErrorPage500';
 import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 import Board from './page/Board/Board';
 import CompanyInfo from './page/CompanyInfo/CompanyInfo';
+import MockTestPage from './page/MockTest/MockTestPage';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -54,7 +55,8 @@ function App() {
               <Route path='/boards/board/reference-tables/table_num' component={ScoreCard} />
               <Route path='/boards/board/schedule' component={Calendar} />
               <Route path='/board' component={Board} />
-                <Route path='/company/user/info' component={CompanyInfo} />
+              <Route path='/company/user/info' component={CompanyInfo} />
+              <Route path='/mocktest' component={MockTestPage} />
             </Switch>
           </Content>
           <Footer />
