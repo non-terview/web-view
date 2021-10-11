@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -20,6 +20,7 @@ const LeftBoxWrap = styled.div`
   border-radius: 10px 0 0 10px;
   background-color: ${Colors.colorDarkGrey};
   text-align: center;
+  color: white;
 `;
 
 const RightBoxWrap = styled.div`
@@ -36,6 +37,12 @@ const StateIcon = () => {
   const userState = useSelector(selectUserState);
   const dispatch = useDispatch();
   const [color, setColor] = useState('#f242f5');
+
+  // 색상 값 설정은 동기처리
+  useEffect(() => {
+    console.log(`상태값 : ${userState}`);
+    handleColorSelect();
+  });
 
   // option 에서 선택한 value값을 dispatch를 통해 전달.
   // option 선택 버튼은 회사 계정에서만 보이도록 설정해야함.
@@ -80,7 +87,7 @@ const StateIcon = () => {
 };
 
 const LeftBox = () => {
-  return <LeftBoxWrap></LeftBoxWrap>;
+  return <LeftBoxWrap>지원자 상태</LeftBoxWrap>;
 };
 const RightBox = ({ color }) => {
   const userState = useSelector(selectUserState);
