@@ -9,6 +9,7 @@ export const slice = createSlice( {
       name: '',
     },
     token: '',
+    type: '',
   },
   reducers: {
     changeState: ( state, action ) => {
