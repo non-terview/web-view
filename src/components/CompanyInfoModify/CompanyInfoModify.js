@@ -6,13 +6,21 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function CompanyInfoModify() {
   //추가적인 디자인을 할경우,,,건들기로..
-  const ContentTr = styled.tr``;
+  const ContentTr = styled.tr`
+    border-bottom: 1px solid #000;
+  `;
 
   //background-color는 ContentTr 구역을 보기위해 잠시 써놓음
+  //opacity를 사용해보려했으나,,실패,,
   const ContentTd = styled.td`
-    background-color: ${Colors.highlightingColor};
+    background-color: rgba(100, 100, 100, 0.1);
     padding: 20px 32px;
     font-size: 13px;
+  `;
+
+  const ContentHr = styled.hr`
+    width: 50px;
+    height: 0.9px;
   `;
 
   // isShow의 초기값은 무조건 FALSE
@@ -38,15 +46,19 @@ export default function CompanyInfoModify() {
         <td>Q.</td>
         <td>
           <h4>{data.title}</h4>
+          <ContentHr />
         </td>
         {/*data.isShow를 기준으로 Arrow태그를 변경해준다
          즉 컨텐츠가 안보일때는 DownIcon,  보일때는 UpIcon이 뜨게한다.*/}
         <td>{data.isShow ? <KeyboardArrowUpIcon onClick={() => showContent(data.id)} /> : <KeyboardArrowDownIcon onClick={() => showContent(data.id)} />}</td>
       </tr>
       {data.isShow ? (
-        <ContentTr>
-          <ContentTd colSpan='3'>{data.contents}</ContentTd>
-        </ContentTr>
+        <Fragment>
+          <ContentTr>
+            <ContentTd colSpan='3'>{data.contents}</ContentTd>
+          </ContentTr>
+          <hr />
+        </Fragment>
       ) : (
         <></>
       )}
