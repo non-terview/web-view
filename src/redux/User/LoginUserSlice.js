@@ -26,7 +26,7 @@ export const slice = createSlice( {
 } );
 
 export const { setToken, setInfo } = slice.actions;
-export const selectUserToken = ( state ) => state.token;
-export const selectUserInfo = ( state ) => state.info;
+export const selectUserToken = ( state ) => state.loginUser.token;
+export const selectUserInfo = ( state ) => state.loginUser.info;
 
 export default slice.reducer;
