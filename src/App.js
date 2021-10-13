@@ -19,6 +19,8 @@ import Header from './components/Template/Header/Header';
 import Footer from './components/Footer/Footer';
 import StateIcon from './components/StateIcon/StateIcon';
 
+import Tests from './page/Board/Tests/Tests';
+
 import { BrowserRouter } from 'react-router-dom';
 
 const Container = styled.div`
@@ -57,6 +59,7 @@ function App() {
               <Route path='/board' component={Board} />
               <Route path='/company/user/info' component={CompanyInfo} />
               <Route path='/mocktest' component={MockTestPage} />
+              <Route path='/boards/tests' component={Tests} />
             </Switch>
           </Content>
           <Footer />
