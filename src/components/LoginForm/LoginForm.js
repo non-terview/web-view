@@ -57,12 +57,11 @@ export default function LoginForm() {
         // 성공
         const data = response.data;
 
-        const frm = new FormData();
-        frm.append( 'username', email );
-        frm.append( 'password', password );
-        frm.append( '_csrf', data.token.token );
-
-        axios.post( "/api/login", frm ).then().catch(  );
+        axios.post( "/api/login", {
+          username:email,
+          password:password,
+          _csrf: data.token.token
+        } ).then().catch(  );
 
         axios.get( '/api/user' ).then(
           response => {
