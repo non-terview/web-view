@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 export const slice = createSlice( {
   name: 'loginUser', // prefix
   initialState: {
-    id: -1,
     state: 'not-login',
     token: '',
     info: {
