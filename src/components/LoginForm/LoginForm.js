@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core';
 
 
 import { useDispatch } from 'react-redux';
-import { getToken } from "../../redux/User/LoginUserSlice";
+import { setToken, setInfo } from "../../redux/User/LoginUserSlice";
 import axios from "axios";
 
 const useStyles = makeStyles( theme => ( {
@@ -41,19 +41,35 @@ export default function LoginForm() {
 
   const dispatch = useDispatch();
 
+  const GetApiToken = () => {
+    axios.get('/api/user/token').then(
+      response => {
+        dispatch(setToken(response.data.token.token))
+      }
+    )
+  }
 
   const handleSubmit = ( e ) => {
     e.preventDefault();
-
+    // 토큰 받기
     axios.get( "/api/user/token" )
       .then( ( response ) => {
         // 성공
         const data = response.data;
-        console.log( data );
-        dispatch( getToken( data.token.token ) );
-      } ).catch( ( error ) => {
-      console.log( error );
-    } );
+
+        axios.post( "/api/login", {
+          username:email,
+          password:password,
+          _csrf: data.token.token
+        } ).then().catch(  );
+
+        axios.get( '/api/user' ).then(
+          response => {
+            dispatch( setInfo( response.data ) )
+          }
+        )
+        GetApiToken();
+      } );
   }
 
   const userMap = [
