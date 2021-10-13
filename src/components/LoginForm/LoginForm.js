@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoginInput from './LoginInput/LoginInput';
 import Button from "@material-ui/core/Button";
 import { makeStyles } from '@material-ui/core';
-
+import { useHistory} from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { setToken, setInfo } from "../../redux/User/LoginUserSlice";
@@ -41,10 +41,13 @@ export default function LoginForm() {
 
   const dispatch = useDispatch();
 
+  const history = useHistory();
+
+
   const GetApiToken = () => {
-    axios.get('/api/user/token').then(
+    axios.get( '/api/user/token' ).then(
       response => {
-        dispatch(setToken(response.data.token.token))
+        dispatch( setToken( response.data.token.token ) )
       }
     )
   }
@@ -58,14 +61,17 @@ export default function LoginForm() {
         const data = response.data;
 
         axios.post( "/api/login", {
-          username:email,
-          password:password,
+          username: email,
+          password: password,
           _csrf: data.token.token
-        } ).then( r => {} ).catch(  );
+        } ).then( r => {
+        } ).catch();
 
         axios.get( '/api/user' ).then(
           response => {
-            dispatch( setInfo( response.data ) )
+            dispatch( setInfo( response.data ) );
+            if (response.data.id === -1 ) history.push("/login");
+            else history.push("/");
           }
         )
         GetApiToken();
