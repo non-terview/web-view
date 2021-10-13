@@ -61,7 +61,7 @@ export default function LoginForm() {
           username:email,
           password:password,
           _csrf: data.token.token
-        } ).then().catch(  );
+        } ).then( r => {} ).catch(  );
 
         axios.get( '/api/user' ).then(
           response => {
