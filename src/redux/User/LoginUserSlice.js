@@ -4,22 +4,29 @@ export const slice = createSlice( {
   name: 'loginUser', // prefix
   initialState: {
     state: 'not-login',
-    userinfo: {
-      email: '',
-      name: '',
-    },
     token: '',
-    type: '',
+    info: {
+      id: -1,
+      name: null,
+      email: null,
+      type: null
+    }
   },
   reducers: {
     changeState: ( state, action ) => {
       state.state = action.payload;
     },
-    getToken: ( state, action ) => {
+    setToken: ( state, action ) => {
       state.token = action.payload;
+    },
+    setInfo: ( state, action ) => {
+      state.info = action.payload;
     }
   }
 } );
 
-export const { getToken } = slice.actions;
+export const { setToken, setInfo } = slice.actions;
+export const selectUserToken = ( state ) => state.token;
+export const selectUserInfo = ( state ) => state.info;
+
 export default slice.reducer;
