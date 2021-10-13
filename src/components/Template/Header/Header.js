@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector} from 'react-redux';
 
 import { selectUserInfo } from '../../../redux/User/LoginUserSlice'
 
