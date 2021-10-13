@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { selectUserInfo } from '../../../redux/User/LoginUserSlice'
 
 // modules
 import styled from 'styled-components';
@@ -24,14 +28,28 @@ const HeaderMenuWrap = styled.div`
   margin-left: auto;
   width: 300px;
   height: 20px;
-  background-color: midnightblue;
+  background-color: white;
 `;
+const handleHeaderInfo = (e) => {
 
-export default function Header() {
-    return (
-        <HeaderWrap>
-            <HeaderLogo/>
-            <HeaderMenuWrap>{/* 로그인, 로그아웃 등의 버튼 위치 */}</HeaderMenuWrap>
-        </HeaderWrap>
-    );
 }
+const Header = () => {
+  const userInfo = useSelector(selectUserInfo);
+
+
+  useEffect(() => {
+    handleHeaderInfo();
+  });
+
+  return (
+    <HeaderWrap>
+      <HeaderLogo/>
+      <HeaderMenuWrap>
+        {userInfo.id === -1 ? "로그인이 필요합니다." : userInfo.name+"님, 로그인하였습니다."}
+        {/* 로그인, 로그아웃 등의 버튼 위치 */ }
+      </HeaderMenuWrap>
+    </HeaderWrap>
+  );
+}
+
+export default Header;
