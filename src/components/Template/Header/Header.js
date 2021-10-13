@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { useEffect } from 'react';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { selectUserInfo } from '../../../redux/User/LoginUserSlice'
 
@@ -30,22 +31,22 @@ const HeaderMenuWrap = styled.div`
   height: 20px;
   background-color: white;
 `;
-const handleHeaderInfo = (e) => {
+const handleHeaderInfo = ( e ) => {
 
 }
 const Header = () => {
-  const userInfo = useSelector(selectUserInfo);
+  const userInfo = useSelector( selectUserInfo );
 
 
-  useEffect(() => {
+  useEffect( () => {
     handleHeaderInfo();
-  });
+  } );
 
   return (
     <HeaderWrap>
       <HeaderLogo/>
       <HeaderMenuWrap>
-        {userInfo.id === -1 ? "로그인이 필요합니다." : userInfo.name+"님, 로그인하였습니다."}
+        { userInfo.id === -1 ? <Link to="/login">로그인이 필요합니다.</Link> : userInfo.name + "님, 로그인하였습니다." }
         {/* 로그인, 로그아웃 등의 버튼 위치 */ }
       </HeaderMenuWrap>
     </HeaderWrap>
