@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import LoginInput from './LoginInput/LoginInput';
 import Button from "@material-ui/core/Button";
 import { makeStyles } from '@material-ui/core';
-import { useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { setToken, setInfo } from "../../redux/User/LoginUserSlice";
 import axios from "axios";
 
-const useStyles = makeStyles( theme => ( {
+const useStyles = makeStyles( theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -24,10 +24,10 @@ const useStyles = makeStyles( theme => ( {
       margin: theme.spacing( 2 ),
     },
   },
-} ) );
+}) );
 
 
-export default function LoginForm() {
+export default function LoginForm(){
   // 언어 설정
   const [ lang ] = useState( 'ko' );
   // 이메일, 비밀번호
@@ -65,13 +65,14 @@ export default function LoginForm() {
           password: password,
           _csrf: data.token.token
         } ).then( r => {
-        } ).catch();
+          console.log( "test" )
+        } );
 
         axios.get( '/api/user' ).then(
           response => {
             dispatch( setInfo( response.data ) );
-            if (response.data.id === -1 ) history.push("/login");
-            else history.push("/");
+            if ( response.data.id === -1 ) history.push( "/login" );
+            else history.push( "/" );
           }
         )
         GetApiToken();
@@ -119,7 +120,7 @@ export default function LoginForm() {
     }
   ];
 
-  function LoginInputView() {
+  function LoginInputView(){
     return isUser ? userMap : companyMap;
   }
 
