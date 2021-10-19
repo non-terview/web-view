@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setToken, setInfo } from "../../redux/User/LoginUserSlice";
 import axios from "axios";
 
-const useStyles = makeStyles( theme => ({
+const useStyles = makeStyles( theme => ( {
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -24,10 +24,10 @@ const useStyles = makeStyles( theme => ({
       margin: theme.spacing( 2 ),
     },
   },
-}) );
+} ) );
 
 
-export default function LoginForm(){
+export default function LoginForm() {
   // 언어 설정
   const [ lang ] = useState( 'ko' );
   // 이메일, 비밀번호
@@ -43,40 +43,33 @@ export default function LoginForm(){
 
   const history = useHistory();
 
+  const loginAndSetInfo = async () => {
+    const { data: token } = await axios.get( "/api/user/token" );
+    await axios.post( "/api/login", {
+      username: email,
+      password: password,
+      _csrf: token.token.token
+    } ).then( r => {
+      console.log( r.request.res.responseUrl );
+    } ).catch( reson => {
+      console.log( "csrf" );
+    } );
 
-  const GetApiToken = () => {
-    axios.get( '/api/user/token' ).then(
-      response => {
-        dispatch( setToken( response.data.token.token ) )
-      }
-    )
+    const { data: result } = await axios.get( "/api/user" );
+
+    dispatch( setInfo( result ) );
+    if ( result.id === -1 ) history.push( "/login" );
+    else history.push( "/" );
+
+    const { data: result_token } = await axios.get( "/api/user/token" );
+    dispatch( setToken( result_token.token.token ) )
   }
 
   const handleSubmit = ( e ) => {
     e.preventDefault();
-    // 토큰 받기
-    axios.get( "/api/user/token" )
-      .then( ( response ) => {
-        // 성공
-        const data = response.data;
-
-        axios.post( "/api/login", {
-          username: email,
-          password: password,
-          _csrf: data.token.token
-        } ).then( r => {
-          console.log( "test" )
-        } );
-
-        axios.get( '/api/user' ).then(
-          response => {
-            dispatch( setInfo( response.data ) );
-            if ( response.data.id === -1 ) history.push( "/login" );
-            else history.push( "/" );
-          }
-        )
-        GetApiToken();
-      } );
+    loginAndSetInfo().then( r => {
+      console.log("success");
+    } );
   }
 
   const userMap = [
@@ -120,7 +113,7 @@ export default function LoginForm(){
     }
   ];
 
-  function LoginInputView(){
+  function LoginInputView() {
     return isUser ? userMap : companyMap;
   }
 
