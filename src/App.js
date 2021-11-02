@@ -43,7 +43,6 @@ function App() {
         <Container>
           <GlobalStyle />
           <Header />
-          <StateIcon />
           <Content>
             <Switch>
               <Route path='/' exact component={Main} />
