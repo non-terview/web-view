@@ -43,13 +43,14 @@ export default function LoginForm() {
 
   const history = useHistory();
 
+
   const loginAndSetInfo = async () => {
     const { data: token } = await axios.get( "/api/user/token" );
-    await axios.post( "/api/login", {
-      username: email,
-      password: password,
-      _csrf: token.token.token
-    } ).then( r => {
+    let form = new FormData();
+    form.set("username", email);
+    form.set("password", password);
+    form.set("_csrf", token.token.token);
+    await axios.post( "/api/login", form  ).then( r => {
       console.log( r.request.res.responseUrl );
     } ).catch( reson => {
       console.log( "csrf" );
