@@ -1,22 +1,8 @@
 import React from 'react';
-
-import Colors from '../../styles/Colors';
+// import Colors from '../../styles/Colors';
 import styled from 'styled-components';
 
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
-const SignInput = styled.input`
-  width: 180px;
-  padding: 7px 10px;
-  border: none;
-  border-bottom: 1px solid ${Colors.colorGrey};
-  margin-top: 20px;
-  transition: 0.3s ease-in-out;
-  &:focus {
-    border-bottom: 1px solid ${Colors.primaryColor};
-  }
-`;
 
 const InputWrap = styled.div`
   display: flex;
