@@ -27,7 +27,7 @@ class Error500 extends Component {
   render() {
     return (
       <ErrorWrap>
-        <SVGErrorIcon style={{ fontSize: '9rem', color: '#3367FF' }} />
+        <SVGErrorIcon style={{ fontSize: '12rem', color: '#3367FF' }} />
         <div>
           <h2>Error (500)</h2>
           <Ptag>죄송합니다.</Ptag>
