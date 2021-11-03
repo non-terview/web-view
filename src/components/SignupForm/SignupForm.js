@@ -39,16 +39,16 @@ const SignupForm = (props) => {
     }
     // 일치했을 경우 POST ->
     const { data: token } = await axios.get('/api/user/token');
+    let form = new FormData();
+    form.set('email', email);
+    form.set('password', password);
+    form.set('name', name);
+    form.set('auth', 'ROLE_USER');
+    form.set('type', 'USER');
+    form.set('_csrf', token.token.token);
+    console.log(`form data : ${form}`);
     await axios
-      .post('/api/user', {
-        username: email,
-        password: password,
-        name: name,
-        auth: 'ROLE_USER',
-        type: 'USER',
-        _csrf: token.token.token
-        //
-      })
+      .post('/api/user', form)
       .then((r) => {
         console.log(r);
       })
