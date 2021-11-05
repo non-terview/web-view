@@ -1,5 +1,5 @@
-import BoardDetail from '../../components/BoardDetail/BoardDetail';
+import DetailScreen from '../../components/BoardDetail/DetailScreen';
 
 export default function BoardDetailScreen() {
-  return <BoardDetail />;
+  return <DetailScreen />;
 }
