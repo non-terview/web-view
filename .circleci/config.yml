@@ -17,37 +17,39 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
       - image: cimg/node:16.3.0
-    # Then run your tests!
+    # Then run your Tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
       # Checkout the code as the first step.
       - checkout
       # Next, the node orb's install-packages step will install the dependencies from a package.json.
       # The orb install-packages step will also automatically cache them for faster future runs.
-      - restore_cache:
-          key: v1-dependencies2-{{ checksum "yarn.lock" }}
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          name: yarn add codecov
-          command: yarn add codecov --dev
-      - save_cache:
-          paths:
-            - "./"
-          key: v1-dependencies2-{{ checksum "yarn.lock" }}
+      # - restore_cache:
+      #     key: v1-dependencies2-{{ checksum "yarn.lock" }}
+      # - node/install-packages:
+      #     pkg-manager: yarn
+      # - run:
+      #     name: yarn add codecov
+      #     command: yarn add codecov --dev
+      # - save_cache:
+      #     paths:
+      #       - "./"
+      #     key: v1-dependencies2-{{ checksum "yarn.lock" }}
 
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
       - run:
           name: Run build
-          command: yarn build
+          command: |
+            yarn install
+            yarn build
       - run:
-          name: Run tests
+          name: Run Tests
           command: |
             yarn test -u
             yarn test --coverage
-            ./node_modules/codecov/bin/codecov --disable=gcov
+
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -56,5 +58,5 @@ workflows:
   sample:
     jobs:
       - build-and-test
-      # For running simple node tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
+      # For running simple node Tests, you could optionally use the node/test job from the orb to replicate and replace the job above in fewer lines.
       # - node/test

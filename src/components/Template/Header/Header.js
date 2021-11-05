@@ -1,37 +1,45 @@
 import React from 'react';
 
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
-// modules
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-// Styles
-const HeaderWrap = styled.div`
-  width: 100%;
-  height: 50px;
-  background-color: pink;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-`;
+import { selectUserInfo } from '../../../redux/User/LoginUserSlice'
 
-const HeaderLogo = styled.div`
-  width: 100px;
-  height: 20px;
-  background-color: white;
-`;
+const Header = () => {
+  const userInfo = useSelector( selectUserInfo );
 
-const HeaderMenuWrap = styled.div`
-  margin-left: auto;
-  width: 300px;
-  height: 20px;
-  background-color: midnightblue;
-`;
-
-export default function Header() {
-    return (
-        <HeaderWrap>
-            <HeaderLogo/>
-            <HeaderMenuWrap>{/* 로그인, 로그아웃 등의 버튼 위치 */}</HeaderMenuWrap>
-        </HeaderWrap>
-    );
+  return (
+    <>
+      <Box sx={ { flexGrow: 1 } }>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={ { mr: 2 } }
+            >
+              <MenuIcon/>
+            </IconButton>
+            <Typography variant="h6" component="div" sx={ { flexGrow: 1 } }>
+              News
+            </Typography>
+            <Button color="inherit">{ userInfo.id === -1 ?
+              <Link to="/login">로그인이 필요합니다.</Link> : userInfo.name + "님, 로그인하였습니다." }</Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </>
+  );
 }
+
+export default Header;
