@@ -11,6 +11,7 @@ import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 import Board from './page/Board/Board';
 import CompanyInfo from './page/CompanyInfo/CompanyInfo';
 import MockTestPage from './page/MockTest/MockTestPage';
+import DetailSch from './components/BoardSearch/DetailSch';
 
 import { Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
@@ -18,7 +19,6 @@ import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/Template/Header/Header';
 import Footer from './components/Footer/Footer';
 import StateIcon from './components/StateIcon/StateIcon';
-
 import { BrowserRouter } from 'react-router-dom';
 
 const Container = styled.div`
@@ -57,6 +57,7 @@ function App() {
               <Route path='/board' component={Board} />
               <Route path='/company/user/info' component={CompanyInfo} />
               <Route path='/mocktest' component={MockTestPage} />
+              <Route path='/detailsch' component={DetailSch} />
             </Switch>
           </Content>
           <Footer />
