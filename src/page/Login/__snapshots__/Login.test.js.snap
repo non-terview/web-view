@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login changes the class when hovered 1`] = `
+<label
+  class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled Mui-required Mui-required"
+  data-shrink="false"
+>
+  이메일
+  <span
+    aria-hidden="true"
+    class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+  >
+     
+    *
+  </span>
+</label>
+`;

@@ -1,14 +1,20 @@
-import React from "react";
-import renderer from 'react-test-renderer';
 import App from "./App";
+import React from "react";
+import { render } from "@testing-library/react";
+import { useSelector } from 'react-redux';
 
-test('App changes the class when hovered', () => {
-        const component = renderer.create(
-            <App></App>,
-        );
+jest.mock( 'react-redux' );
 
-        let app = component.toJSON();
+test( 'App changes the class when hovered', () => {
 
-        expect(app).toMatchSnapshot();
-    }
+
+    useSelector.mockImplementationOnce( () => ( { dataready: true } ) )
+
+    const { getByText } = render(
+      <App/>,
+    );
+
+    expect( getByText( '참여' ) ).not.toBeNull();
+    expect( getByText( 'ⓒ ON-TERVIEW Corp.' ) ).toMatchSnapshot();
+  }
 )
