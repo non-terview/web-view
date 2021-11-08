@@ -1,18 +1,5 @@
-import React from 'react';
-
-import Main from './page/Main/Main';
-import Login from './page/Login/Login';
-import SignUp from './page/SignUp/SignUp';
-import ScoreCard from './page/ScoreCard/ScoreCard';
-import ErrorPage400 from './page/Error_page/ErrorPage400';
-import ErrorPage404 from './page/Error_page/ErrorPage404';
-import ErrorPage500 from './page/Error_page/ErrorPage500';
-import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
-import Board from './page/Board/Board';
-import CompanyInfo from './page/CompanyInfo/CompanyInfo';
-import MockTestPage from './page/MockTest/MockTestPage';
-
-import { Switch, Route } from 'react-router-dom';
+// modules
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/Template/Header/Header';
