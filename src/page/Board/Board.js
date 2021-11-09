@@ -1,13 +1,9 @@
-import BoardInfo from '../../components/BoardInfo/BoardInfo';
-import BoardList from '../../components/BoardList/BoardList';
-import BoardSearch from '../../components/BoardSearch/BoardSearch';
+import BoardMain from '../../components/Board/BoardMain';
 
 export default function BoardPage() {
   return (
     <div>
-      <BoardSearch />
-      <BoardList />
-      <BoardInfo />
+      <BoardMain />
     </div>
   );
 }
