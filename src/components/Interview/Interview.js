@@ -32,15 +32,25 @@ const ContentContainer = styled.div`
   height: 100%;
   background-color: orange;
 `;
+
+// video
 const VideoContainer = styled.div`
   background-color: darkgrey;
   width: 80%;
   height: 100%;
 `;
+
+// menuitem
 const MenuItemContainer = styled.div`
+  width: 20%;
+  height: 100%;
   background-color: blue;
 `;
-
+const MenuItemTopContainer = styled.div`
+  width: 100%;
+  height: 40%;
+  background-color: red;
+`;
 const Interview = () => {
   return (
     <Container>
@@ -57,9 +67,21 @@ const SideBar = () => {
 const Content = () => {
   return (
     <ContentContainer>
-      <VideoContainer></VideoContainer>
-      <MenuItemContainer></MenuItemContainer>
+      <VideoView />
+      <MenuItem />
     </ContentContainer>
+  );
+};
+
+const VideoView = () => {
+  return <VideoContainer></VideoContainer>;
+};
+
+const MenuItem = () => {
+  return (
+    <MenuItemContainer>
+      <MenuItemTopContainer />
+    </MenuItemContainer>
   );
 };
 
