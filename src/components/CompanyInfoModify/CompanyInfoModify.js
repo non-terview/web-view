@@ -18,11 +18,6 @@ export default function CompanyInfoModify() {
     font-size: 13px;
   `;
 
-  const ContentHr = styled.hr`
-    width: 50px;
-    height: 0.9px;
-  `;
-
   // isShow의 초기값은 무조건 FALSE
   const [qnaArr, setqnaArr] = useState([
     {
@@ -46,7 +41,6 @@ export default function CompanyInfoModify() {
         <td>Q.</td>
         <td>
           <h4>{data.title}</h4>
-          <ContentHr />
         </td>
         {/*data.isShow를 기준으로 Arrow태그를 변경해준다
          즉 컨텐츠가 안보일때는 DownIcon,  보일때는 UpIcon이 뜨게한다.*/}
@@ -57,7 +51,6 @@ export default function CompanyInfoModify() {
           <ContentTr>
             <ContentTd colSpan='3'>{data.contents}</ContentTd>
           </ContentTr>
-          <hr />
         </Fragment>
       ) : (
         <></>
