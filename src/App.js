@@ -1,4 +1,11 @@
-import React from 'react';
+// modules
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
+import GlobalStyle from './styles/GlobalStyle';
+import Header from './components/Template/Header/Header';
+import Footer from './components/Footer/Footer';
+import BoardList from './components/BoardList/BoardList';
+// import StateIcon from './components/StateIcon/StateIcon';
 
 import Main from './page/Main/Main';
 import Login from './page/Login/Login';
@@ -11,15 +18,8 @@ import Calendar from './page/ScheduleCalendar/ScheduleCalendar';
 import Board from './page/Board/Board';
 import CompanyInfo from './page/CompanyInfo/CompanyInfo';
 import MockTestPage from './page/MockTest/MockTestPage';
+import BoardDetailScreen from './page/BoardDetailScreen/BoardDetailScreen';
 
-import { Switch, Route } from 'react-router-dom';
-import styled from 'styled-components';
-import GlobalStyle from './styles/GlobalStyle';
-import Header from './components/Template/Header/Header';
-import Footer from './components/Footer/Footer';
-// import StateIcon from './components/StateIcon/StateIcon';
-
-import { BrowserRouter } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -54,6 +54,8 @@ function App() {
               <Route path='/boards/board/reference-tables/table_num' component={ScoreCard} />
               <Route path='/boards/board/schedule' component={Calendar} />
               <Route path='/board' component={Board} />
+              <Route path='/boarddetail' component={BoardDetailScreen} />
+              <Route path='/boardlist' component={BoardList} />
               <Route path='/company/user/info' component={CompanyInfo} />
               <Route path='/mocktest' component={MockTestPage} />
             </Switch>
