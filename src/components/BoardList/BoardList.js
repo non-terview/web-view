@@ -19,6 +19,10 @@ const EtcP = styled.p`
   text-overflow: ellipsis;
 `;
 
+const Tableborder = styled.table`
+  border-collapse: collapse;
+  border-top: solid 3px #808080;
+`;
 const ContentTr = styled.tr``;
 
 const NameTd = styled.td`
@@ -35,61 +39,55 @@ const ButtonTd = styled.td`
   border-bottom: solid 1px #808080;
 `;
 
+//DB에서 회사정보 가져와서 boardList안에 넣기
 export default function BoardList() {
-  const [boardList, setboardList] = useState([
+  const boardList = [
     {
       id: 1,
-      companyname: 'KMU',
+      companyname: 'KMU(주)',
       title: '백엔드 개발자 구합니다!',
-      contents: '신입/경력 학력무관 서울 정규직 4000만원'
+      description: '신입/경력 학력무관 서울 정규직 4000만원'
     },
-    { id: 2, companyname: 'SOO', title: '웹 퍼블리셔 구직합니다.', contents: '경력 대졸 서울 정규직 4500만원' }
-  ]);
+    { id: 2, companyname: 'SOO(주)', title: '웹 퍼블리셔 구직합니다.', description: '경력 대졸 서울 정규직 4500만원' }
+  ];
 
-  /* const elements = boardList.map((data, index) => (
-
-  ));*/
+  const elements = boardList.map((data, index) => (
+    <ContentTr>
+      <NameTd>{data.companyname}</NameTd>
+      <ContentTd>
+        <TitBox>
+          <strong>
+            <a href='#' target='_blank'>
+              {data.title}
+            </a>
+          </strong>
+          <EtcP>
+            <span>{data.description}</span>
+          </EtcP>
+        </TitBox>
+      </ContentTd>
+      <ButtonTd>
+        <Button
+          variant='contained'
+          onClick={() => {
+            alert('클릭됐어요!');
+          }}
+        >
+          지원하기
+        </Button>
+      </ButtonTd>
+    </ContentTr>
+  ));
   return (
     <>
-      <table>
+      <Tableborder>
         <colgroup>
           <col width='200' />
           <col width='500' />
           <col width='200' />
         </colgroup>
-        <tbody>
-          <ContentTr>
-            <NameTd>KMU</NameTd>
-            <ContentTd>
-              <TitBox>
-                <strong>
-                  <a href='#' target='_blank'>
-                    콘텐츠 디자이너,에디터 / 브랜드디자이너 / 앱개발자 채용
-                  </a>
-                </strong>
-                <EtcP>
-                  <span>경력무관</span>
-                  <span>학력무관</span>
-                  <span>서울 송파구 외</span>
-                  <span>정규직</span>
-                  <span>5,000만원 이하</span>
-                  <span>주임~대리급 외</span>
-                </EtcP>
-              </TitBox>
-            </ContentTd>
-            <ButtonTd>
-              <Button
-                variant='contained'
-                onClick={() => {
-                  alert('클릭됐어요!');
-                }}
-              >
-                지원하기
-              </Button>
-            </ButtonTd>
-          </ContentTr>
-        </tbody>
-      </table>
+        <tbody>{elements}</tbody>
+      </Tableborder>
     </>
   );
 }
