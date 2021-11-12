@@ -1,99 +1,93 @@
 import React from 'react';
-import { Component } from 'react';
+import { useState, Fragment } from 'react';
 import styled from 'styled-components';
+import Button from '@mui/material/Button';
 
-const BoardNumber = styled.div`
-  background-color: #ffffff;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const TitBox = styled.div`
+  position: relative;
+  height: 46px;
+  padding: 0 10px 0 44px;
+  margin: 27px 0 31px 0;
+  border-left: solid 1px #808080;
+  border-right: solid 1px #808080;
+`;
+const EtcP = styled.p`
+  overflow: hidden;
+  font-size: 13px;
+  margin-top: 9px;
+  max-width: 100%;
+  text-overflow: ellipsis;
 `;
 
-const BoardRegion = styled.div`
-  background-color: #ffffff;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Tableborder = styled.table`
+  border-collapse: collapse;
+  border-top: solid 3px #808080;
+`;
+const ContentTr = styled.tr``;
+
+const NameTd = styled.td`
+  text-align: center;
+  border-bottom: solid 1px #808080;
+`;
+const ContentTd = styled.td`
+  border-bottom: solid 1px #808080;
 `;
 
-const BoardTitle = styled.div`
-  background-color: #ffffff;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const ButtonTd = styled.td`
+  margin: auto;
+  text-align: center;
+  border-bottom: solid 1px #808080;
 `;
 
-const BoardWriteData = styled.div`
-  background-color: #ffffff;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+//DB에서 회사정보 가져와서 boardList안에 넣기
+export default function BoardList() {
+  const boardList = [
+    {
+      id: 1,
+      companyname: 'KMU(주)',
+      title: '백엔드 개발자 구합니다!',
+      description: '신입/경력 학력무관 서울 정규직 4000만원'
+    },
+    { id: 2, companyname: 'SOO(주)', title: '웹 퍼블리셔 구직합니다.', description: '경력 대졸 서울 정규직 4500만원' }
+  ];
 
-const BoardClosingDate = styled.div`
-  background-color: #ffffff;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-class BoardList extends Component {
-  render() {
-    return (
-      <div>
-        <table border='1'>
-          <thead>
-            <tr>
-              <th width='60px'>
-                <BoardNumber>글 번호</BoardNumber>
-              </th>
-              <th width='150px'>
-                <BoardRegion>지역</BoardRegion>
-              </th>
-              <th width='400px'>
-                <BoardTitle>기업명/제목</BoardTitle>
-              </th>
-              <th width='100px'>
-                <BoardWriteData>작성날짜</BoardWriteData>
-              </th>
-              <th width='100px'>
-                <BoardClosingDate>마감일</BoardClosingDate>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td width='60px'>
-                <BoardNumber>1</BoardNumber>
-              </td>
-              <td width='150px'>
-                <BoardRegion>지역</BoardRegion>
-              </td>
-              <td width='400px'>
-                <BoardTitle>기업명/제목</BoardTitle>
-              </td>
-              <td width='100px'>
-                <BoardWriteData>작성날짜</BoardWriteData>
-              </td>
-              <td width='100px'>
-                <BoardClosingDate>마감일</BoardClosingDate>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
+  const elements = boardList.map((data, index) => (
+    <ContentTr>
+      <NameTd>{data.companyname}</NameTd>
+      <ContentTd>
+        <TitBox>
+          <strong>
+            <a href='#' target='_blank'>
+              {data.title}
+            </a>
+          </strong>
+          <EtcP>
+            <span>{data.description}</span>
+          </EtcP>
+        </TitBox>
+      </ContentTd>
+      <ButtonTd>
+        <Button
+          variant='contained'
+          onClick={() => {
+            alert('클릭됐어요!');
+          }}
+        >
+          지원하기
+        </Button>
+      </ButtonTd>
+    </ContentTr>
+  ));
+  return (
+    <>
+      <Tableborder>
+        <colgroup>
+          <col width='200' />
+          <col width='500' />
+          <col width='200' />
+        </colgroup>
+        <tbody>{elements}</tbody>
+      </Tableborder>
+    </>
+  );
 }
-
-export default BoardList;
