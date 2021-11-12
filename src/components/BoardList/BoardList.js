@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, Fragment } from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 const TitBox = styled.div`
   position: relative;
@@ -23,7 +25,6 @@ const Tableborder = styled.table`
   border-collapse: collapse;
   border-top: solid 3px #808080;
 `;
-const ContentTr = styled.tr``;
 
 const NameTd = styled.td`
   text-align: center;
@@ -39,6 +40,13 @@ const ButtonTd = styled.td`
   border-bottom: solid 1px #808080;
 `;
 
+const PagingDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px 0px 0px;
+`;
+
 //DB에서 회사정보 가져와서 boardList안에 넣기
 export default function BoardList() {
   const boardList = [
@@ -48,11 +56,13 @@ export default function BoardList() {
       title: '백엔드 개발자 구합니다!',
       description: '신입/경력 학력무관 서울 정규직 4000만원'
     },
-    { id: 2, companyname: 'SOO(주)', title: '웹 퍼블리셔 구직합니다.', description: '경력 대졸 서울 정규직 4500만원' }
+    { id: 2, companyname: 'SOO(주)', title: '웹 퍼블리셔 구직합니다.', description: '경력 대졸 서울 정규직 4500만원' },
+    { id: 3, companyname: '블랙시스템', title: 'Android개발 경력자 구합니다', description: '경력 대졸 서울 정규직 5000만원' },
+    { id: 4, companyname: '소버네트워크', title: '네트워크 엔지니어 구합니다', description: '경력 대졸 서울 정규직 4200만원' }
   ];
 
   const elements = boardList.map((data, index) => (
-    <ContentTr>
+    <tr>
       <NameTd>{data.companyname}</NameTd>
       <ContentTd>
         <TitBox>
@@ -76,7 +86,7 @@ export default function BoardList() {
           지원하기
         </Button>
       </ButtonTd>
-    </ContentTr>
+    </tr>
   ));
   return (
     <>
@@ -88,6 +98,11 @@ export default function BoardList() {
         </colgroup>
         <tbody>{elements}</tbody>
       </Tableborder>
+      <PagingDiv>
+        <Stack spacing={2}>
+          <Pagination count={10} color='primary' />
+        </Stack>
+      </PagingDiv>
     </>
   );
 }

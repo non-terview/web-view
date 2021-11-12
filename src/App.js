@@ -1,5 +1,5 @@
 // modules
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 import Header from './components/Template/Header/Header';
@@ -19,7 +19,6 @@ import Board from './page/Board/Board';
 import CompanyInfo from './page/CompanyInfo/CompanyInfo';
 import MockTestPage from './page/MockTest/MockTestPage';
 import BoardDetailScreen from './page/BoardDetailScreen/BoardDetailScreen';
-
 
 const Container = styled.div`
   width: 100%;
