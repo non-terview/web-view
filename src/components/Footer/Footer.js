@@ -8,10 +8,7 @@ const FooterWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  z-index: 9999;
 `;
 
 export default function Footer() {
