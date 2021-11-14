@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { selectMenuState } from '../../redux/Interview/MenuStateSlice';
 
 import ColorPalette from './InterviewColor';
+
+// MenuComponents
+import ManagerChat from './Menu/ManagerChat';
 
 // menuitem
 const MenuItemContainer = styled.div`
@@ -22,12 +27,20 @@ const MenuItemBottomContainer = styled.div`
   background-color: ${ColorPalette.MenuItemBottomColor};
 `;
 
+// resume, self, managerChat, table, test
 // MenuItem
 const MenuItem = () => {
+  let menu = {
+    managerChat: <ManagerChat />
+  };
+
+  const menuState = useSelector(selectMenuState);
+  useEffect(() => {}, [menuState]);
+
   return (
     <MenuItemContainer>
       <MenuItemTopContainer />
-      <MenuItemBottomContainer />
+      <MenuItemBottomContainer>{menu[menuState]}</MenuItemBottomContainer>
     </MenuItemContainer>
   );
 };

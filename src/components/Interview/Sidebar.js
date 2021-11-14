@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeState, selectMenuState } from '../../redux/Interview/MenuStateSlice';
 
 import ColorPalette from './InterviewColor';
 
@@ -56,23 +58,50 @@ const SidebarIconDes = styled.span`
   }
 `;
 
+const MenuList = [
+  {
+    id: 0,
+    text: '이력서',
+    state: 'resume'
+  },
+  {
+    id: 1,
+    text: '자기소개서',
+    state: 'self'
+  },
+  {
+    id: 2,
+    text: '매니저채팅',
+    state: 'managerChat'
+  },
+  {
+    id: 3,
+    text: '평가표',
+    state: 'tabel'
+  },
+  {
+    id: 4,
+    text: '테스트',
+    state: 'test'
+  }
+];
+
 const Sidebar = () => {
-  return (
-    <SideBarContainer>
-      <SideBarIcon text='이력서' />
-      <SideBarIcon text='자기소개서' />
-      {/* 아래 3개의 컴포넌트는 면접관만 사용 가능 */}
-      <SideBarIcon text='매니저채팅' />
-      <SideBarIcon text='평가표' />
-      <SideBarIcon text='test' />
-    </SideBarContainer>
-  );
+  const mapMenu = MenuList.map((index) => <SideBarIcon key={index.id} text={index.text} stateValue={index.state} />);
+  return <SideBarContainer>{mapMenu}</SideBarContainer>;
 };
-const SideBarIcon = ({ text }) => {
+
+const SideBarIcon = ({ text, stateValue, fn }) => {
+  const dispatch = useDispatch();
+
+  const handleChangeState = (state) => {
+    dispatch(changeState(state));
+  };
+
   return (
     <SidebarIconContainer>
-      <SidebarIconStyle />
-      <SidebarIconDes>{text}</SidebarIconDes>
+      <SidebarIconStyle onClick={() => handleChangeState(stateValue)} />
+      <SidebarIconDes></SidebarIconDes>
     </SidebarIconContainer>
   );
 };
