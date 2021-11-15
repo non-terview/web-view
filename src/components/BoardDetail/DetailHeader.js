@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { React, useState } from 'react';
+import { React } from 'react';
 import Button from '@mui/material/Button';
 import LineImg from '../../images/box.png';
-import CompanyInfo from '../../page/CompanyInfo/CompanyInfo';
 
 // article > div padding 부분
-const HeaderArticle = styled.article`
+const HeaderSection = styled.section`
   position: relative;
   width: 960px;
   padding: 20px;
@@ -129,24 +128,27 @@ export default function DetailHeader() {
   const BoardInfo = {
     id: 1,
     compnayname: 'KMU(주)',
-    description: '프론트 엔지니어 모집합니다'
+    description: '프론트 엔지니어 모집합니다',
+    career: '신입',
+    ability: '대졸',
+    location: '서울역',
+    employmentType: '정규직',
+    pay: '4000'
   };
 
-  const CompanyInfo = [
-    {
-      id: 1,
-      company: '네이버',
-      type: 'IT',
-      employees: '4000',
-      division: '대기업',
-      website: 'www.navercorp.com',
-      img: '~~경로'
-    }
-  ];
+  const CompanyInfo = {
+    id: 1,
+    company: '네이버',
+    type: 'IT',
+    employees: '4000',
+    division: '대기업',
+    website: 'www.navercorp.com',
+    img: '~~경로'
+  };
   return (
     //DetailBoxR부분에 사진 넣어야함
     <>
-      <HeaderArticle>
+      <HeaderSection>
         <HeadertopDiv>
           <CompnayDes>
             <div>
@@ -162,15 +164,11 @@ export default function DetailHeader() {
             <dl>
               <DetailDt>경력</DetailDt>
               <DetailDd>
-                <strong>신입</strong>
+                <strong>{BoardInfo.career}</strong>
               </DetailDd>
               <DetailDt>학력</DetailDt>
               <DetailDd>
-                <strong>무관</strong>
-              </DetailDd>
-              <DetailDt>우대</DetailDt>
-              <DetailDd>
-                <strong>기사 자격증</strong>
+                <strong>{BoardInfo.ability}</strong>
               </DetailDd>
             </dl>
           </DetailBoxL>
@@ -180,51 +178,47 @@ export default function DetailHeader() {
             <dl>
               <DetailDt>고용형태</DetailDt>
               <DetailDd>
-                <strong>정규직</strong>
+                <strong>{BoardInfo.employmentType}</strong>
               </DetailDd>
               <DetailDt>급여</DetailDt>
               <DetailDd>
-                <strong>협의</strong>
+                <strong>{BoardInfo.pay}</strong>
               </DetailDd>
               <DetailDt>지역</DetailDt>
               <DetailDd>
-                <strong>시청역</strong>
-              </DetailDd>
-              <DetailDt>시간</DetailDt>
-              <DetailDd>
-                <strong>09:00~18:00</strong>
+                <strong>{BoardInfo.location}</strong>
               </DetailDd>
             </dl>
           </DetailBoxM>
           <DetailBoxR>
             <ImgDiv></ImgDiv>
-            <h4>{CompanyInfo[0].company}</h4>
+            <h4>{CompanyInfo.company}</h4>
             <br />
             <dl>
               <DetailDt>업종</DetailDt>
               <DetailDd2>
-                <strong>{CompanyInfo[0].type}</strong>
+                <strong>{CompanyInfo.type}</strong>
               </DetailDd2>
               <DetailDt>사원수</DetailDt>
               <DetailDd2>
-                <strong>{CompanyInfo[0].employees}</strong>
+                <strong>{CompanyInfo.employees}</strong>
               </DetailDd2>
               <DetailDt>기업형태</DetailDt>
               <DetailDd2>
-                <strong>{CompanyInfo[0].division}</strong>
+                <strong>{CompanyInfo.division}</strong>
               </DetailDd2>
               <DetailDt>설립년도</DetailDt>
               <DetailDd2>
-                <strong>2002년</strong>
+                <strong></strong>
               </DetailDd2>
               <DetailDt>홈페이지</DetailDt>
               <DetailDd2>
-                <strong>{CompanyInfo[0].website}</strong>
+                <strong>{CompanyInfo.website}</strong>
               </DetailDd2>
             </dl>
           </DetailBoxR>
         </HeaderbottomDiv>
-      </HeaderArticle>
+      </HeaderSection>
       <HeaderDivButton>
         <Button
           variant='contained'
