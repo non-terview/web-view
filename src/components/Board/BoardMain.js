@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import BoardList from '../BoardList/BoardList';
 
 //제일 큰 틀
 const DetailWrap = styled.div`
@@ -9,16 +10,16 @@ const DetailWrap = styled.div`
   background-color: blue;
 `;
 
-// 컨테이너 섹션 부분
-const ContainerSection = styled.section`
+// 컨테이너 아티클 부분
+const ContainerArticle = styled.article`
   position: relative;
   width: 960px;
   margin: 0 auto;
   background-color: red;
 `;
 
-// 헤더 아티클 부분
-const HeaderArticle = styled.article`
+// 헤더 섹션 부분
+const HeaderSection = styled.section`
   position: relative;
   width: 960px;
   height: 200px;
@@ -26,8 +27,8 @@ const HeaderArticle = styled.article`
   background-color: skyblue;
 `;
 
-// 바디 아티클 부분
-const BodyArticle = styled.article`
+// 바디 섹션 부분
+const BodySection = styled.section`
   position: relative;
   width: 960px;
   height: 400px;
@@ -38,10 +39,12 @@ const BodyArticle = styled.article`
 export default function BoardMain() {
   return (
     <DetailWrap>
-      <ContainerSection>
-        <HeaderArticle>게시판 상세 검색 들어갈 부분</HeaderArticle>
-        <BodyArticle>게시판 목록 들어갈 부분</BodyArticle>
-      </ContainerSection>
+      <ContainerArticle>
+        <HeaderSection>게시판 상세 검색 들어갈 부분</HeaderSection>
+        <BodySection>
+          <BoardList></BoardList>
+        </BodySection>
+      </ContainerArticle>
     </DetailWrap>
   );
 }

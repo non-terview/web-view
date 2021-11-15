@@ -12,7 +12,7 @@ const DetailWrap = styled.div`
 `;
 
 // 컨테이너 섹션 부분
-const ContainerSection = styled.section`
+const ContainerArticle = styled.article`
   position: relative;
   width: 960px;
   margin: 0 auto;
@@ -21,10 +21,10 @@ const ContainerSection = styled.section`
 export default function BoardDetailScreen(props) {
   return (
     <DetailWrap>
-      <ContainerSection>
+      <ContainerArticle>
         <DetailHeader />
         <DetailContent />
-      </ContainerSection>
+      </ContainerArticle>
     </DetailWrap>
   );
 }

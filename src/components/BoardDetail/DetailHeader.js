@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { React, useState } from 'react';
 import Button from '@mui/material/Button';
 import LineImg from '../../images/box.png';
+import CompanyInfo from '../../page/CompanyInfo/CompanyInfo';
 
 // article > div padding 부분
 const HeaderArticle = styled.article`
@@ -125,11 +126,23 @@ const ImgDiv = styled.div`
 
 export default function DetailHeader() {
   // isShow의 초기값은 무조건 FALSE
-  const CompanyInfo = {
+  const BoardInfo = {
     id: 1,
     compnayname: 'KMU(주)',
     description: '프론트 엔지니어 모집합니다'
   };
+
+  const CompanyInfo = [
+    {
+      id: 1,
+      company: '네이버',
+      type: 'IT',
+      employees: '4000',
+      division: '대기업',
+      website: 'www.navercorp.com',
+      img: '~~경로'
+    }
+  ];
   return (
     //DetailBoxR부분에 사진 넣어야함
     <>
@@ -137,9 +150,9 @@ export default function DetailHeader() {
         <HeadertopDiv>
           <CompnayDes>
             <div>
-              <Companyname>{CompanyInfo.compnayname}</Companyname>
+              <Companyname>{BoardInfo.compnayname}</Companyname>
             </div>
-            {CompanyInfo.description}
+            {BoardInfo.description}
           </CompnayDes>
         </HeadertopDiv>
         <HeaderbottomDiv>
@@ -185,20 +198,20 @@ export default function DetailHeader() {
           </DetailBoxM>
           <DetailBoxR>
             <ImgDiv></ImgDiv>
-            <h4>회사정보</h4>
+            <h4>{CompanyInfo[0].company}</h4>
             <br />
             <dl>
               <DetailDt>업종</DetailDt>
               <DetailDd2>
-                <strong>IT</strong>
+                <strong>{CompanyInfo[0].type}</strong>
               </DetailDd2>
               <DetailDt>사원수</DetailDt>
               <DetailDd2>
-                <strong>200</strong>
+                <strong>{CompanyInfo[0].employees}</strong>
               </DetailDd2>
               <DetailDt>기업형태</DetailDt>
               <DetailDd2>
-                <strong>중견기업</strong>
+                <strong>{CompanyInfo[0].division}</strong>
               </DetailDd2>
               <DetailDt>설립년도</DetailDt>
               <DetailDd2>
@@ -206,7 +219,7 @@ export default function DetailHeader() {
               </DetailDd2>
               <DetailDt>홈페이지</DetailDt>
               <DetailDd2>
-                <strong>www.test.com</strong>
+                <strong>{CompanyInfo[0].website}</strong>
               </DetailDd2>
             </dl>
           </DetailBoxR>
