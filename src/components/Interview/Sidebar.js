@@ -101,7 +101,7 @@ const SideBarIcon = ({ text, stateValue, fn }) => {
   return (
     <SidebarIconContainer>
       <SidebarIconStyle onClick={() => handleChangeState(stateValue)} />
-      <SidebarIconDes></SidebarIconDes>
+      <SidebarIconDes>{text}</SidebarIconDes>
     </SidebarIconContainer>
   );
 };

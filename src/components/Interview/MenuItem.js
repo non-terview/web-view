@@ -10,7 +10,7 @@ import ManagerChat from './Menu/ManagerChat';
 
 // menuitem
 const MenuItemContainer = styled.div`
-  width: 20%;
+  width: 25%;
   min-width: 250px;
   height: 100%;
 
@@ -30,6 +30,7 @@ const MenuItemBottomContainer = styled.div`
 // resume, self, managerChat, table, test
 // MenuItem
 const MenuItem = () => {
+  // component
   let menu = {
     managerChat: <ManagerChat />
   };
